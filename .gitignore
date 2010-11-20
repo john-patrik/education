@@ -1,0 +1,13 @@
+*.swp
+*.pyc
+*.sqlite
+*.sqlite3
+*.pcheck
+*.nogit.*
+*.docx
+*.class
+*~
+*.aux
+*.log
+*.toc
+*.doc
