@@ -1,0 +1,20 @@
+/* File: makefile */
+vpath %.h include
+vpath %.c src
+OFILES = main.o file.o gen.o stat.o
+CFLAGS = -c -Wall
+LDFLAGS = -o
+BINFILE = program1
+
+all : $(OFILES)
+	gcc $^ $(LDFLAGS) $(BINFILE)
+main.o : main.c file.h gen.h stat.h 
+	gcc $(CFLAGS) $<
+file.o : file.c file.h
+	gcc $(CFLAGS) $<
+gen.o : gen.c gen.h
+	gcc $(CFLAGS) $<
+stat.o : stat.c stat.h
+	gcc $(CFLAGS) $<
+clean : 
+	rm $(OFILES) $(BINFILE)

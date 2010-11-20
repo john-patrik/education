@@ -1,0 +1,159 @@
+/* CSS Document for First Promotions Web Site */
+
+/* Document styles */
+body {
+  background-color:#FFFFFF;
+  font-family:Arial, Helvetica, sans-serif;}
+
+img {border:none;}
+
+div.page {
+  border: solid 1px #000000;
+  width:800px;}
+
+/* masthead */
+td#siteDescription { 
+  color:#FFFFFF;
+  background-color:#000066;
+  padding:5px;
+  font-size:x-small;
+  font-weight:bold;
+  width:800px;}
+
+/* navigation */
+table#navigation {
+  background-color:#6699FF;
+  width:800px; height:19px; }
+
+table#navigation td {
+  background-color:#000066;}
+
+/* columns */
+.leftColumn {
+  width:150px; 
+  vertical-align:top;
+  text-align:center;
+  background-color:#D9ECFF;}
+
+.rightColumn {
+  width:180px; 
+  vertical-align:top;
+  text-align:center;
+  background-color:#efefef;}
+
+.middleColumn {
+  width:470px;
+  vertical-align:top;
+  background-color:#FFFFFF;}
+
+/* main page content */
+div#welcomeText {
+  width:400px;
+  border:solid 2px #999999;
+  margin:25px;
+  padding:10px;
+  font-size:medium;}
+
+div#FeaturedItemsImage {margin-left:25px;}
+
+table.productsTable {
+  margin-left:25px; 
+  width:400px;
+  background-color:#999999;}
+
+td.productDescription, td.productImage {
+  width:199px;
+  background-color:#ffffff;
+  font-size:medium;
+  padding:4px;}
+
+td.productImage {text-align:center;}
+
+div.footer {
+  margin:25px; 
+  width:400px;
+  font-size:x-small;
+  text-align:center;}
+
+/* Right column */
+img#orderHotline {margin-top:10px; margin-bottom:10px;}
+
+table#orderInfo {
+  background-color:#FF9900;
+  width:130px;
+  margin:2px;}
+
+td#orderInstructions {
+  background-color:#ffffff;
+  padding:10px;
+  font-size:small;
+  color:#904C2D;}
+
+/* product lists */
+h1 {
+  margin-left:25px;
+  margin-top:10px;
+  margin-bottom:10px;
+  color:#000066;}
+
+span.price {font-weight:bold;}
+
+/* product details */
+
+td#productDetail {padding:20px;}
+table.productInfo {
+  width:550px;
+  border-collapse:collapse;
+}
+
+
+table.productInfo td {
+  border: solid 1px black;
+}
+
+table.productTitle {
+  border: solid 1px black; 
+  width:550px;}
+
+
+td#productTitle {width:225px; padding:10px;}
+td#productListLink {width:225px; text-align:right; padding:10px;}
+
+
+table#priceTable td {border:none;}
+
+h3 { color:#000066;}
+
+td#productInfoImage, td#productInfoDescription, td#productInfoPrice, td#productPrintInfo {
+  width:215px; 
+  padding:10px;
+  font-size:small;}
+
+
+td#productInfoImage {text-align:center;}
+td#productInfoDescription, td#productInfoPrice {background-color:#efefef;}
+
+table#priceTable{
+  width:215px; 
+  font-size:small;}
+
+table#priceTable  th {
+  background-color:#000000; 
+  color:#ffffff; 
+  padding:2px;}
+
+table#priceTable td { 
+  background-color:#eeeeee; 
+  padding:2px;}
+
+/* Links */
+a:link {
+  color:#0066cc;
+  text-decoration:none;}
+
+a:visited {color:#003366;}
+a:hover {
+  color:#9966CC;
+  text-decoration:underline;}
+
+a:active {color:#0000cc;}

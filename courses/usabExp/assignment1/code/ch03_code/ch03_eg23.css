@@ -1,0 +1,16 @@
+/* CSS Document */
+body {
+  font-family:arial, verdana, sans-serif;
+  font-size:14px;
+  background-color:#d6d6d6;}
+
+div.page {
+  border:solid 1px #000000;
+  background-color:#ffffff;
+  margin:30px;
+  padding:15px;}
+
+div.background {
+  padding:20px;
+  font-style:italic;
+  font-size:smaller;}

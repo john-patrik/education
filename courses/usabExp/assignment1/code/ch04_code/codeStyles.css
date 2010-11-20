@@ -1,0 +1,13 @@
+/* CSS Document */
+code {font-family:courier;}
+code.foreground {
+  color:#000000;
+  display:block;
+  font-size:smaller;
+  background-color:#d6d6d6;
+  padding:2px;
+  margin:5px;}
+code.background {
+  display:block;
+  padding:2px;
+  margin:5px; }

@@ -1,0 +1,12 @@
+@import url("codeStyles.css");
+
+body {
+  font-family:arial, verdana, sans-serif;
+  background-color:#ffffff;}
+
+p.abstract {font-weight:bold;}
+
+div.figure {
+  font-weight:bold;
+  padding-bottom:12px;
+  padding-left:12px;}

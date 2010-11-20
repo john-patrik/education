@@ -1,0 +1,39 @@
+####################################################################################################
+Looks interesting:
+
+VT1
+Starttermin: Vt 2010, vecka 03-12 - webbutveckling,                     7.5     Kurskod: UMU-54334
+Starttermin: Vt 2010, vecka 03-12 - webbteknik för ingenjörer,          7.5     Kurskod: UMU-54327
+Starttermin: Vt 2010, vecka 03-22 - linux som utvecklingsmiljö,         7.5     Kurskod: UMU-54377
+Starttermin: Vt 2010, vecka 03-22 - linux serveradministration,         15      Kurskod: UMU-54399
+
+VT2
+Choose 30 pts more
+Starttermin: Vt 2010, vecka 03-22 - webbdesign grund,                   7.5     Kurskod: UMU-63502
+Starttermin: Vt 2010, vecka 12-22 - webbdesign med js och dom,          7.5     Kurskod: UMU-27393
+Starttermin: Vt 2010, vecka 12-22 - webb 2.0,                           7.5     Kurskod: UMU-27323
+Starttermin: Vt 2010, vecka 03-22 - användbarhet och tillgänglighet,    15      Kurskod: UMU-63518
+Starttermin: Vt 2010, vecka 03-22 - dynamiska webbplatser,              15      Kurskod: UMU-63528
+Starttermin: Vt 2010, vecka 03-12 - databasteknik,                      7.5     Kurskod: UMU-54323
+Starttermin: Vt 2010, vecka 12-22 - applikationsutv. internet,          7.5     Kurskod: UMU-54321
+
+SUMMER
+Starttermin: Sommar 2010, vecka 23-34 - flash,                          7.5     Kurskod: UMU-95491
+Starttermin: Sommar 2010, vecka 23-34 - webbdesign med js och dom,      7.5     Kurskod: UMU-92736
+Starttermin: Sommar 2010, vecka 23-34 - webb 2.0,                       7.5     Kurskod: UMU-92735
+Starttermin: Sommar 2010, vecka 23-34 - öppen källkod,                  7.5     Kurskod: UMU-92738
+
+####################################################################################################
+Chosen:
+
+Starttermin: Vt 2010, vecka 03-12 - webbutveckling,                     7.5     Kurskod: UMU-54334
+Starttermin: Vt 2010, vecka 03-12 - webbteknik för ingenjörer,          7.5     Kurskod: UMU-54327
+Starttermin: Vt 2010, vecka 03-22 - linux som utvecklingsmiljö,         7.5     Kurskod: UMU-54377
+Starttermin: Vt 2010, vecka 03-22 - linux serveradministration,         15      Kurskod: UMU-54399
+Starttermin: Vt 2010, vecka 12-22 - applikationsutv. internet,          7.5     Kurskod: UMU-54321
+
+Starttermin: Sommar 2010, vecka 23-34 - webbdesign med js och dom,      7.5     Kurskod: UMU-92736
+Starttermin: Sommar 2010, vecka 23-34 - öppen källkod,                  7.5     Kurskod: UMU-92738
+Starttermin: Sommar 2010, vecka 23-34 - css-baserad webbdesign,         7.5     Kurskod: UMU-92730
+
+* = Scheduled. (Urgent)

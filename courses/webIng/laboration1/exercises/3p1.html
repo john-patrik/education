@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- lang="en-US" xml:lang="en-US" -->
+<html lang="sv" xml:lang="sv" "xmlns=http://www.w3.org/1999/xhtml">
+
+<head>
+<meta name="description" content="htmltestning" />
+<meta name="author" content="me" />
+<meta name="keywords" content="html test webbteknik" />
+<meta http-equiv="content-type" content="text/html" />
+
+<title> Four blocks </title>
+
+<style type="text/css">
+<!--
+div {
+ border:1px solid gray;
+ margin:-1px;
+}
+div.head,div.foot {
+ background-color:gray;
+ color:white;
+ width:800px;
+}
+div.container {
+ width:800px;
+ height:500px;
+ background-image:
+ url('pic800x500.jpg');
+ color:white;
+}
+div.content {
+ border:none;
+}
+h1.header {}
+p.footer {}
+-->
+</style>
+</head>
+
+<body>
+<div class="head" id="head"><h1 class="header">H1 Header</h1></div>
+<div class="container" id="container">
+<div class="content" id="content">
+<h2>H2 Content</h2>
+<p>Paragraph 1.</p>
+<p>Paragraph 2.</p>
+</div>
+</div>
+<div class="foot" id="foot"><p class="footer">Footer</p></div>
+</body>
+</html>

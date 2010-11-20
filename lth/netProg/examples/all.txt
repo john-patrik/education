@@ -1,0 +1,1034 @@
+
+import java.rmi.*;
+import java.net.*;
+import java.math.BigInteger;
+
+public class FibonacciClient {
+
+  public static void main(String args[]) {
+        
+    if (args.length == 0 || !args[0].startsWith("rmi:")) {
+      System.err.println(
+        "Usage: java FibonacciClient rmi://host.domain:port/fibonacci number");
+      return;   
+    }
+            
+    try {      
+      Object o = Naming.lookup(args[0]);
+      Fibonacci calculator = (Fibonacci) o;
+      for (int i = 1; i < args.length; i++) {
+        try {
+          BigInteger index = new BigInteger(args[i]);
+          BigInteger f = calculator.getFibonacci(index);
+          System.out.println("The " + args[i] + "th Fibonacci number is " 
+           + f);
+        }
+        catch (NumberFormatException e) {
+          System.err.println(args[i] + "is not an integer.");
+        }
+      } 
+    }
+    catch (MalformedURLException ex) {
+      System.err.println(args[0] + " is not a valid RMI URL");
+    }
+    catch (RemoteException ex) {
+      System.err.println("Remote object threw exception " + ex);
+    }
+    catch (NotBoundException ex) {
+      System.err.println(
+       "Could not find the requested remote object on the server");
+    } 
+  }
+}
+import java.net.*;
+import java.rmi.*;
+
+public class FibonacciServer {
+
+  public static void main(String[] args) {
+
+    try {
+      FibonacciImpl f = new FibonacciImpl();
+      Naming.rebind("fibonacci", f);
+      System.out.println("Fibonacci Server ready.");
+    }
+     catch (RemoteException rex) {
+      System.out.println("Exception in FibonacciImpl.main: " + rex);
+    }
+    catch (MalformedURLException ex) {
+      System.out.println("MalformedURLException " + ex);
+    }
+    
+  }
+
+}
+import java.rmi.*;
+import java.rmi.server.UnicastRemoteObject;
+import java.math.BigInteger;
+
+public class FibonacciImpl extends UnicastRemoteObject implements Fibonacci {
+
+  public FibonacciImpl() throws RemoteException {
+    super();
+  }
+    
+  public BigInteger getFibonacci(int n) throws RemoteException {
+    return this.getFibonacci(new BigInteger(Long.toString(n)));  
+  }
+  
+  public BigInteger getFibonacci(BigInteger n) throws RemoteException {  
+    
+    System.out.println("Calculating the " + n + "th Fibonacci number");
+    BigInteger zero = new BigInteger("0");
+    BigInteger one  = new BigInteger("1");
+    
+    if (n.equals(zero)) return one;
+    if (n.equals(one)) return one; 
+
+    BigInteger i  = one;
+    BigInteger low  = one;
+    BigInteger high  = one;
+
+    while (i.compareTo(n) == -1) {
+      BigInteger temp = high;
+      high = high.add(low);
+      low = temp; 
+      i = i.add(one);
+    }
+
+    return high;
+
+  }
+}
+import java.rmi.*;
+import java.math.BigInteger;
+
+public interface Fibonacci extends Remote {
+
+  public BigInteger getFibonacci(int n) throws RemoteException;
+  public BigInteger getFibonacci(BigInteger n) throws RemoteException;
+
+}
+import java.net.*;
+import java.io.*;
+import java.util.*;
+
+ public class LastModified {
+
+  public static void main(String args[]) {
+
+    for (int i=0; i < args.length; i++) {
+      try {
+        URL u = new URL(args[i]);
+        HttpURLConnection http = (HttpURLConnection) u.openConnection();
+        http.setRequestMethod("HEAD");
+        System.out.println(u + "was last modified at " 
+         + new Date(http.getLastModified()));
+      }  // end try
+      catch (MalformedURLException ex) {
+        System.err.println(args[i] + " is not a URL I understand");
+      }
+      catch (IOException ex) {
+        System.err.println(ex);
+      }      
+      System.out.println();       
+    }  // end for
+      
+  }  // end main
+
+}  // end LastModified
+import java.net.*;
+import java.io.*;
+import java.util.*;
+
+public class HeaderViewer {
+
+  public static void main(String args[]) {
+
+    for (int i=0; i < args.length; i++) {
+      try {
+        URL u = new URL(args[0]);
+        URLConnection uc = u.openConnection();
+        System.out.println("Content-type: " + uc.getContentType());
+        System.out.println("Content-encoding: " 
+         + uc.getContentEncoding());
+        System.out.println("Date: " + new Date(uc.getDate()));
+        System.out.println("Last modified: " 
+         + new Date(uc.getLastModified()));
+        System.out.println("Expiration date: " 
+         + new Date(uc.getExpiration()));
+        System.out.println("Content-length: " + uc.getContentLength());
+      }  // end try
+      catch (MalformedURLException ex) {
+        System.err.println(args[i] + " is not a URL I understand");
+      }
+      catch (IOException ex) {
+        System.err.println(ex);
+      }      
+      System.out.println(); 
+    }  // end for
+      
+  }  // end main
+
+}  // end HeaderViewer
+import java.net.*;
+import java.io.*;
+
+public class EncodingAwareSourceViewer {
+
+  public static void main (String[] args) {
+
+    for (int i = 0; i < args.length; i++) {  
+       
+      try {
+        // set default encoding
+        String encoding = "ISO-8859-1";
+        URL u = new URL(args[i]);
+        URLConnection uc = u.openConnection();
+        String contentType = uc.getContentType();
+        int encodingStart = contentType.indexOf("charset=");
+        if (encodingStart != -1) {
+            encoding = contentType.substring(encodingStart+8);
+        }
+        InputStream in = new BufferedInputStream(uc.getInputStream());   
+        Reader r = new InputStreamReader(in, encoding);
+        int c;
+        while ((c = r.read()) != -1) {
+          System.out.print((char) c);
+        } 
+      }
+      catch (MalformedURLException ex) {
+        System.err.println(args[0] + " is not a parseable URL");
+      }
+      catch (IOException ex) {
+        System.err.println(ex);
+      }
+
+    } //  end if
+
+  } // end main
+
+}  // end EncodingAwareSourceViewer
+import java.net.*;
+import java.io.*;
+
+public class MulticastSender {
+
+  public static void main(String[] args) {
+  
+    InetAddress ia = null;
+    int port = 0;
+    byte ttl = (byte) 1;
+  
+    // read the address from the command line
+    try {
+      ia = InetAddress.getByName(args[0]);
+      port = Integer.parseInt(args[1]);
+      if (args.length > 2) ttl = (byte) Integer.parseInt(args[2]);
+    }
+    catch (Exception ex)  {
+      System.err.println(ex);
+      System.err.println(
+       "Usage: java MulticastSender multicast_address port ttl");
+      System.exit(1);
+    }
+  
+    byte[] data = "Here's some multicast data\r\n".getBytes();
+    DatagramPacket dp = new DatagramPacket(data, data.length, ia, port);
+  
+    try {
+      MulticastSocket ms = new MulticastSocket();
+      ms.joinGroup(ia);
+      for (int i = 1; i <= 10; i++) {
+        ms.send(dp, ttl);
+      }
+      ms.leaveGroup(ia);
+      ms.close();
+    }
+    catch (SocketException ex) {
+      System.err.println(ex);
+    }
+    catch (IOException ex) {
+      System.err.println(ex);
+    }  
+  
+  }
+
+}
+import java.net.*;
+import java.io.*;
+
+public class MulticastSniffer {
+
+  public static void main(String[] args) {
+  
+    InetAddress group = null;
+    int port = 0;
+  
+    // read the address from the command line
+    try {
+      group = InetAddress.getByName(args[0]);
+      port = Integer.parseInt(args[1]);
+    }  // end try
+    catch (Exception ex) {
+      // ArrayIndexOutOfBoundsException, NumberFormatException,
+      // or UnknownHostException
+      System.err.println(
+       "Usage: java MulticastSniffer multicast_address port");
+      System.exit(1);
+    }
+  
+    MulticastSocket ms = null;
+  
+    try {
+      ms = new MulticastSocket(port);
+      ms.joinGroup(group);
+      
+      byte[] buffer = new byte[8192];
+      while (true) {
+        DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
+        ms.receive(dp);
+        String s = new String(dp.getData());
+        System.out.println(s);
+      }
+    }
+    catch (IOException ex) {
+      System.err.println(ex);
+    }
+    finally {
+      if (ms != null) {
+        try {
+          ms.leaveGroup(group);
+          ms.close();
+        }
+        catch (IOException ex) {} 
+      }
+    } 
+  
+  }
+
+}
+import java.net.*;
+import java.io.*;
+import java.util.*;
+
+
+public class UDPDaytimeServer extends UDPServer {
+
+  public final static int DEFAULT_PORT = 13;
+
+  public UDPDaytimeServer() throws SocketException {
+    super(DEFAULT_PORT); 
+  }
+
+  public void respond(DatagramPacket packet) {
+
+    try {
+      Date now = new Date();
+      String response = now.toString() + "\r\n";
+      byte[] data = response.getBytes("ASCII");
+      DatagramPacket outgoing = new DatagramPacket(data, 
+       data.length, packet.getAddress(), packet.getPort());
+      socket.send(outgoing);
+    }
+    catch (IOException ex) {
+      System.err.println(ex);
+    }
+    
+  }
+
+  public static void main(String[] args) {
+ 
+   try {
+     UDPServer server = new UDPDaytimeServer();
+     server.start();
+   }
+   catch (SocketException ex) {
+     System.err.println(ex);
+   }
+ 
+  }
+
+}
+import java.net.*;
+import java.io.*;
+
+public abstract class UDPServer extends Thread {
+
+  private int bufferSize; // in bytes
+  protected DatagramSocket ds;
+   
+  public UDPServer(int port, int bufferSize) 
+   throws SocketException {
+    this.bufferSize = bufferSize;
+    this.ds = new DatagramSocket(port);
+  }
+  
+  public UDPServer(int port) throws SocketException {
+    this(port, 8192);
+  }
+  
+  public void run() {
+  
+    byte[] buffer = new byte[bufferSize];
+    while (true) {
+      DatagramPacket incoming = new DatagramPacket(buffer, buffer.length);
+      try {
+        ds.receive(incoming);
+        this.respond(incoming);
+      }
+      catch (IOException e) {
+        System.err.println(e);
+      }      
+    } // end while
+
+  }  // end run
+  
+  public abstract void respond(DatagramPacket request);
+
+}
+import java.net.*;
+import java.util.*;
+
+public class UDPTimeClient {
+  
+  public final static int DEFAULT_PORT = 37;
+  public final static String DEFAULT_HOST = "time-a.nist.gov";
+  
+  public static void main(String[] args) {
+    
+    InetAddress host;
+    int port = DEFAULT_PORT;
+
+    try {
+      if (args.length > 0) {
+        host = InetAddress.getByName(args[0]);
+      }
+      else {
+        host = InetAddress.getByName(DEFAULT_HOST);
+      } 
+    }
+    catch (Exception ex) {
+      System.out.println("Usage: java UDPTimeClient host port");
+      return;
+    }
+
+    if (args.length > 1) {
+      try {
+        port = Integer.parseInt(args[1]);
+        if (port <= 0 || port > 65535) port = DEFAULT_PORT;;
+      }
+      catch (Exception ex){
+      }
+    }
+
+    try {
+      UDPPoke poker = new UDPPoke(host, port);
+      byte[] response = poker.poke();
+        if (response == null) {
+        System.out.println("No response within allotted time");
+        return;
+        }
+        else if (response.length != 4) {
+        System.out.println("Unrecognized response format");
+        return;         
+        }
+   
+      
+      // The time protocol sets the epoch at 1900,
+      // the Java Date class at 1970. This number 
+      // converts between them.
+    
+      long differenceBetweenEpochs = 2208988800L;
+
+      long secondsSince1900 = 0;
+      for (int i = 0; i < 4; i++) {
+        secondsSince1900 
+         = (secondsSince1900 << 8) | (response[i] & 0x000000FF);
+      }
+
+      long secondsSince1970 
+       = secondsSince1900 - differenceBetweenEpochs;       
+      long msSince1970 = secondsSince1970 * 1000;
+      Date time = new Date(msSince1970);
+      
+      System.out.println(time);
+    }
+    catch (Exception ex) {
+      System.err.println(ex);	
+      ex.printStackTrace();
+    }     
+    
+  } 
+  
+}
+import java.net.*;
+import java.io.*;
+
+public class UDPDiscardServer {
+
+  public final static int DEFAULT_PORT = 9;
+  public final static int MAX_PACKET_SIZE = 65507;
+
+  public static void main(String[] args) {
+
+    int port = DEFAULT_PORT;
+    byte[] buffer = new byte[MAX_PACKET_SIZE];
+
+    try {
+      port = Integer.parseInt(args[0]);
+    }
+    catch (Exception ex) {
+      // use default port
+    }
+
+    try {
+      DatagramSocket server = new DatagramSocket(port);
+      DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
+      while (true) {
+        try {
+          server.receive(packet);
+          String s = new String(packet.getData(), 0, packet.getLength());
+          System.out.println(packet.getAddress() + " at port " 
+           + packet.getPort() + " says " + s);
+          // reset the length for the next packet
+          packet.setLength(buffer.length);
+        }
+        catch (IOException ex) {
+          System.err.println(ex);
+        }      
+       } // end while
+    }  // end try
+    catch (SocketException  ex) {
+      System.err.println(ex);
+    }  // end catch
+
+  }  // end main
+
+}
+import java.net.*;
+
+public class UDPPortScanner {
+
+  public static void main(String[] args) {
+    
+    for (int port = 1024; port <= 65535; port++) {
+      try {
+        // the next line will fail and drop into the catch block if
+        // there is already a server running on port i
+        DatagramSocket server = new DatagramSocket(port);
+        server.close();
+      }
+      catch (SocketException ex) {
+        System.out.println("There is a server on port " + port + ".");
+      } // end try
+    } // end for
+
+  }
+  
+}
+import java.net.*;
+
+public class DatagramExample {
+
+  public static void main(String[] args) {
+  
+    String s = "This is a test.";
+  
+    byte[] data = s.getBytes();
+    try {
+      InetAddress ia = InetAddress.getByName("www.ibiblio.org");
+      int port = 7;
+      DatagramPacket dp 
+       = new DatagramPacket(data, data.length, ia, port);
+      System.out.println("This packet is addressed to " 
+       + dp.getAddress() + " on port " + dp.getPort());
+      System.out.println("There are " + dp.getLength() 
+       + " bytes of data in the packet");
+      System.out.println(
+        new String(dp.getData(), dp.getOffset(), dp.getLength()));
+    }
+    catch (UnknownHostException e) {
+      System.err.println(e);
+    }
+    
+  }
+
+}
+import java.net.*;
+import java.io.*;
+import com.macfaq.io.SafeBufferedReader; // from Chapter 4
+
+public class ClientTester {
+
+  public static void main(String[] args) {
+
+    int port;
+    
+    try {
+      port = Integer.parseInt(args[0]);
+    }  
+    catch (Exception ex) {
+      port = 0;
+    }
+    
+    try {
+      ServerSocket server = new ServerSocket(port, 1);
+      System.out.println("Listening for connections on port " 
+       + server.getLocalPort());
+
+      while (true) {
+        Socket connection = server.accept();
+        try {
+          System.out.println("Connection established with " 
+           + connection);
+          Thread input = new InputThread(connection.getInputStream());
+          input.start();
+          Thread output 
+           = new OutputThread(connection.getOutputStream());
+          output.start();
+          // wait for output and input to finish 
+          try {
+            input.join();
+            output.join();
+          }
+          catch (InterruptedException ex) {
+          }
+        }
+        catch (IOException ex) {
+          System.err.println(ex); 
+        }
+        finally {
+          try {
+            if (connection != null) connection.close();
+          }
+          catch (IOException ex) {}
+        }
+      }
+    }
+    catch (IOException ex) {
+      ex.printStackTrace();
+    }
+  
+  }
+
+}
+
+class InputThread extends Thread {
+  
+  InputStream in;
+  
+   public InputThread(InputStream in) {
+     this.in = in;
+   }
+
+   public void run()  {
+   
+     try {     
+       while (true) {
+         int i = in.read();
+         if (i == -1) break;
+         System.out.write(i);
+       }
+     }
+     catch (SocketException ex) {
+       // output thread closed the socket
+     }
+     catch (IOException ex) {
+       System.err.println(ex);
+     }
+     try {
+       in.close();
+     }
+     catch (IOException ex) { 
+     } 
+
+  }
+
+}
+
+class OutputThread extends Thread {
+  
+  private Writer out;
+    
+  public OutputThread(OutputStream out) {
+    this.out = new OutputStreamWriter(out);
+  }
+
+  public void run() {
+
+    String line;
+    BufferedReader in 
+     = new SafeBufferedReader(new InputStreamReader(System.in));
+    try {
+      while (true) {
+        line = in.readLine();
+        if (line.equals(".")) break;
+        out.write(line +"\r\n");
+        out.flush();
+      }   
+    }
+    catch (IOException ex) { 
+    } 
+    try {
+      out.close();
+    }
+    catch (IOException ex) { 
+    } 
+    
+   }
+
+}
+import java.net.*;
+import java.io.*;
+import java.util.Date;
+ 
+public class TimeServer {
+ 
+  public final static int DEFAULT_PORT = 37;
+
+  public static void main(String[] args) {
+        
+   int port = DEFAULT_PORT;     
+   if (args.length > 0) {
+     try {
+        port = Integer.parseInt(args[0]);
+        if (port < 0 || port >= 65536) {
+          System.out.println("Port must between 0 and 65535");
+          return;      
+        }
+     }   
+     catch (NumberFormatException ex) {}  
+   }     
+
+   // The time protocol sets the epoch at 1900,
+   // the java Date class at 1970. This number 
+   // converts between them.
+    
+   long differenceBetweenEpochs = 2208988800L;
+    
+   try {
+     ServerSocket server = new ServerSocket(port);
+       while (true) {
+         Socket connection = null;
+         try {
+           connection = server.accept();
+           OutputStream out = connection.getOutputStream();
+           Date now = new Date();
+           long msSince1970 = now.getTime();
+           long secondsSince1970 = msSince1970/1000;
+           long secondsSince1900 = secondsSince1970 
+            + differenceBetweenEpochs;
+           byte[] time = new byte[4];
+           time[0] 
+            = (byte) ((secondsSince1900 & 0x00000000FF000000L) >> 24);
+           time[1] 
+            = (byte) ((secondsSince1900 & 0x0000000000FF0000L) >> 16);
+           time[2] 
+            = (byte) ((secondsSince1900 & 0x000000000000FF00L) >> 8);
+           time[3] = (byte) (secondsSince1900 & 0x00000000000000FFL);
+           out.write(time);
+           out.flush();      
+         } // end try
+         catch (IOException ex) {
+         } // end catch
+         finally {
+           if (connection != null) connection.close(); 
+         }
+       }  // end while
+   }  // end try
+   catch (IOException ex) {
+     System.err.println(ex);
+   } // end catch
+
+  } // end main
+
+} // end TimeServer
+import java.net.*;
+import java.io.*;
+import java.util.Date;
+ 
+public class DaytimeServer {
+ 
+  public final static int DEFAULT_PORT = 13;
+
+  public static void main(String[] args) {
+
+   int port = DEFAULT_PORT;     
+   if (args.length > 0) {
+     try {
+        port = Integer.parseInt(args[0]);
+        if (port < 0 || port >= 65536) {
+          System.out.println("Port must between 0 and 65535");
+          return;      
+        }
+     }   
+     catch (NumberFormatException ex) {
+       // use default port
+     }  
+
+   }     
+
+   try {
+    
+     ServerSocket server = new ServerSocket(port);
+      
+     Socket connection = null;
+     while (true) {
+        
+       try {
+         connection = server.accept();
+         Writer out = new OutputStreamWriter(connection.getOutputStream());
+         Date now = new Date();
+         out.write(now.toString() +"\r\n");
+         out.flush();      
+         connection.close();
+       }
+       catch (IOException ex) {}
+       finally {
+         try {
+           if (connection != null) connection.close();
+         }
+         catch (IOException ex) {}          
+       }
+         
+     }  // end while
+       
+   }  // end try
+   catch (IOException ex) {
+     System.err.println(ex);
+   } // end catch
+
+  } // end main
+
+} // end DaytimeServer
+import java.net.*;
+import java.io.*;
+
+public class LocalPortScanner {
+
+  public static void main(String[] args) {
+    
+    for (int port = 1; port <= 65535; port++) {
+
+      try {
+        // the next line will fail and drop into the catch block if
+        // there is already a server running on the port
+        ServerSocket server = new ServerSocket(port);
+      }
+      catch (IOException ex) {
+        System.out.println("There is a server on port " + port + ".");
+      } // end catch
+
+    } // end for
+
+  }
+  
+}
+import java.net.*;
+import java.io.*;
+
+public class SourceViewer {
+
+  public static void main (String[] args) {
+
+    if  (args.length > 0) {
+      try {
+        //Open the URL for reading
+        URL u = new URL(args[0]);
+        InputStream in = u.openStream();
+        // buffer the input to increase performance 
+        in = new BufferedInputStream(in);       
+        // chain the InputStream to a Reader
+        Reader r = new InputStreamReader(in);
+        int c;
+        while ((c = r.read()) != -1) {
+          System.out.print((char) c);
+        } 
+      }
+      catch (MalformedURLException ex) {
+        System.err.println(args[0] + " is not a parseable URL");
+      }
+      catch (IOException ex) {
+        System.err.println(ex);
+      }
+
+    } //  end if
+
+  } // end main
+
+}  // end SourceViewer
+import java.net.*;
+
+public class URLSplitter {
+
+  public static void main(String args[]) {
+
+    for (int i = 0; i < args.length; i++) {
+      try {
+        URL u = new URL(args[i]);
+        System.out.println("The URL is " + u);
+        System.out.println("The scheme is " + u.getProtocol());        
+        System.out.println("The user info is " + u.getUserInfo());
+        
+        String host = u.getHost();
+        if (host != null) {
+          int atSign = host.indexOf('@');  
+          if (atSign != -1) host = host.substring(atSign+1);
+          System.out.println("The host is " + host);   
+        }
+        else {          
+          System.out.println("The host is null.");   
+        }
+
+        System.out.println("The port is " + u.getPort());
+        System.out.println("The path is " + u.getPath());
+        System.out.println("The ref is " + u.getRef());
+        System.out.println("The query string is " + u.getQuery());
+      }  // end try
+      catch (MalformedURLException ex) {
+        System.err.println(args[i] + " is not a URL I understand.");
+      }
+      System.out.println();
+    }  // end for
+
+  }  // end main
+
+}  // end URLSplitter
+import java.net.*;
+import java.io.*;
+
+public class HostLookup {
+
+  public static void main (String[] args) {
+
+    if (args.length > 0) { // use command line
+      for (int i = 0; i < args.length; i++) {
+        System.out.println(lookup(args[i]));
+      }
+    }
+    else {
+      BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+      System.out.println("Enter names and IP addresses. Enter \"exit\" to quit.");
+      try {
+        while (true) {
+          String host = in.readLine();
+          if (host.equalsIgnoreCase("exit") || host.equalsIgnoreCase("quit")) {
+            break;
+          }
+          System.out.println(lookup(host));
+        }
+      }
+      catch (IOException ex) {
+        System.err.println(ex);
+      }
+
+   }
+
+  } /* end main */
+
+
+  private static String lookup(String host) {
+
+    InetAddress node;
+
+    // get the bytes of the IP address
+    try {
+      node = InetAddress.getByName(host);
+    }
+    catch (UnknownHostException ex) {
+      return "Cannot find host " + host;
+    }
+
+    if (isHostname(host)) {
+      return node.getHostAddress();
+    }
+    else {  // this is an IP address
+      return node.getHostName();
+    }
+
+  }  // end lookup
+
+  private static boolean isHostname(String host) {
+
+    // Is this an IPv6 address?
+    if (host.indexOf(':') != -1) return false;
+      
+    char[] ca = host.toCharArray();
+    // if we see a character that is neither a digit nor a period
+    // then host is probably a hostname
+    for (int i = 0; i < ca.length; i++) {
+      if (!Character.isDigit(ca[i])) {
+        if (ca[i] != '.') return true;
+      }
+    }
+
+    // Everything was either a digit or a period
+    // so host looks like an IPv4 address in dotted quad format
+    return false;
+
+   }  // end isHostName
+
+ } // end HostLookup
+import java.io.*;
+
+public class CallbackDigestUserInterface {
+  
+  public static void receiveDigest(byte[] digest, String name) {
+  
+    StringBuffer result = new StringBuffer(name);
+    result.append(": ");
+    for (int j = 0; j < digest.length; j++) {
+      result.append(digest[j] + " ");
+    }  
+    System.out.println(result);
+      
+  }
+  
+  public static void main(String[] args) {
+  
+    for (int i = 0; i < args.length; i++) {    
+      // Calculate the digest
+      File f = new File(args[i]);
+      CallbackDigest cb = new CallbackDigest(f);
+      Thread t = new Thread(cb);
+      t.start();
+    } 
+    
+  }
+
+}
+import java.io.*;
+import java.security.*;
+
+public class CallbackDigest implements Runnable {
+
+  private File input;
+
+  public CallbackDigest(File input) {
+   this.input = input;
+  }
+
+  public void run() {
+
+    try {
+      FileInputStream in = new FileInputStream(input);
+      MessageDigest sha = MessageDigest.getInstance("SHA");
+      DigestInputStream din = new DigestInputStream(in, sha);
+      int b;
+      while ((b = din.read()) != -1) ;
+      din.close();
+      byte[] digest = sha.digest();
+      CallbackDigestUserInterface.receiveDigest(digest, 
+       input.getName());
+    }
+    catch (IOException ex) {
+      System.err.println(ex);
+    }
+    catch (NoSuchAlgorithmException ex) {
+      System.err.println(ex);
+    }
+    
+  }
+
+}

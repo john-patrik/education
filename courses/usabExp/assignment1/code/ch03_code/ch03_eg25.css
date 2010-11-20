@@ -1,0 +1,8 @@
+/* CSS Document */
+body {font-family:arial, verdana, sans-serif;}
+
+table, th, td {border:solid 2px #000000;}
+
+/* Following two rules add whitespace making the document more readable. */
+ table{margin:15px;}
+th, td{padding:20px;} 

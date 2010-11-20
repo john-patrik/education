@@ -1,0 +1,4 @@
+/* CSS Document for ch03_eg12.html */
+p.normal {word-spacing:normal;}
+p.wide {word-spacing:3em;}
+p.narrow {word-spacing:-.5ex;}

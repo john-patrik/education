@@ -1,0 +1,4 @@
+/* CSS Document for ch03_eg13.html */
+p.normal {letter-spacing:normal;}
+p.wide {letter-spacing:1.5em;}
+p.narrow {letter-spacing:-.2ex;}

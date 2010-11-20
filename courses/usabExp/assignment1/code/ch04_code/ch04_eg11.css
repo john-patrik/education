@@ -1,0 +1,4 @@
+/* CSS Document */
+p:before {content: counter(paragraphNumber, upper-roman) ": ";}
+h1 {counter-reset: paragraphNumber;}
+p {counter-increment: paragraphNumber;}

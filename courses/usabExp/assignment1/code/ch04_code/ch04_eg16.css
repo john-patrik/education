@@ -1,0 +1,8 @@
+/* CSS Document */
+
+li:before {
+  display:marker;
+  marker-offset:10em;
+  content: counter(item, lower-roman) " ";
+  counter-increment: item;
+}

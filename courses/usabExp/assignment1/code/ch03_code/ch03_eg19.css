@@ -1,0 +1,6 @@
+/* CSS Document for ch03_eg19.html */
+h1 {font-family:arial;}
+
+h1.basic { text-shadow: 0.2em 0.2em;}
+h1.blurredColor { text-shadow: 3px 3px 5px red;}
+h1.complex { text-shadow: 3px 3px red, yellow -3px 3px 2px, 3px -3px }

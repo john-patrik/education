@@ -1,0 +1,5 @@
+/* CSS Document */
+input:focus {
+  background-color:#ffffcc; 
+  border-width:3px;
+  border-color:#ff0000;}

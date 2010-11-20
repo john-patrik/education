@@ -1,0 +1,13 @@
+/* CSS Document */
+
+div, h1, p {
+  font-family:arial, verdana, sans-serif;
+  border:1px solid #000000;
+  margin:5px;}
+
+div {width:350px;}p {width:300px;}
+
+div#page2 {
+  position:relative;
+  top:-100px;
+  left:20px;}

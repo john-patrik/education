@@ -1,0 +1,6 @@
+/* CSS Document for ch03_eg03.html */
+p {font-family:arial;}
+
+p.normal {font-style:normal;}
+p.italic{font-style:italic;}
+p.oblique {font-style:oblique;}

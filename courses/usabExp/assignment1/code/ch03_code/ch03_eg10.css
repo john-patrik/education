@@ -1,0 +1,13 @@
+/* CSS Document for ch03_eg10.html */
+body {font-family:arial; font-size:12pt;}
+p.normal {font-stretch:normal;}
+p.wider {font-stretch:wider;}
+p.narrower {font-stretch:narrower;}
+p.ultra-condensed {font-stretch:ultra-condensed;}
+p.extra-condensed {font-stretch:extra-condensed;}
+p.condensed {font-stretch:condensed;}
+p.semi-condensed {font-stretch:semi-condensed;}
+p.semi-expanded {font-stretch:semi-expanded;}
+p.expanded {font-stretch:expanded;}
+p.extra-expanded {font-stretch:extra-expanded;}
+p.ultra-expanded {font-stretch:ultra-expanded;}

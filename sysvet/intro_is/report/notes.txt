@@ -1,0 +1,32 @@
+#### Objectives ####
+
+* Göra en jämförande studie av Beynon-Davies (E-business) och 
+  Alter (The Work System Method).
+* Skriv om hur de ser på möjligheten att förbättra en verksamhet med
+  hjälp av Informationssystem:
+    Vilka likheter finns emellan dem?
+    Vilka skillnader finns emellan dem?
+    Finns det någon gräns för hur bra det kan bli?
+
+* 4500 ord plus/minus 10%.
+
+
+#### Skelett ####
+
+* Inledande sammandrag
+* Innehåll
+
+* Förord
+* Definitioner
+
+* Inledning
+    * Verksamheter, handel och IT
+        Syfte: Hur fungerar verksamheter och IT idag? Trender?
+    * Verksamheten som ett system
+        Syfte: varför ser man på verksamheter som system?
+    * Informationssystem
+        Syfte: Vad är informationssystem?
+* Utvärdering av system
+* Utveckling av system
+
+* Litteratur

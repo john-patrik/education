@@ -1,0 +1,12 @@
+/* CSS Document */
+
+body, h1, p {
+  border:solid 2px #000000;
+  padding:5px; 
+  margin:4px;
+  font-family:arial, verdana, sans-serif;}
+
+b, em {
+  border:solid 2px #999999;
+  padding:2px;
+  margin:23px;}

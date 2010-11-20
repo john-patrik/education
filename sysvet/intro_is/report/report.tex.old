@@ -1,0 +1,158 @@
+\documentclass[12pt,a4paper,titlepage]{article}
+%\documentclass[a4paper,12pt]{report}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{color}
+\usepackage{graphics}
+
+\title{\textsf{\textbf{Introduktion till informationssystem; \\ 
+    En jämförande studie av Beynon-Davies (E-business) och
+    Alter (The Work System Method)}}}
+\author{John-Patrik Nilsson \\
+	e-post: daj01jni@student.lu.se}
+
+\begin{document}
+
+%\pagestyle{empty}
+%\newpage
+
+\pagestyle{headings}
+\thispagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  Inledande del (tänk: läsarservice)  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\maketitle
+
+\section*{\textsf{Inledande sammandrag}}
+%  Max 100 ord, bör innehålla: syfte, genomförande (metod, material,
+%  resultat), resultat.
+Det har varit en närmast explositionsartad utveckling av användandet och intresset för handel över Internet och andra elektroniska system under de senaste åren. Som grund för detta liggen en förhoppning av att introduceringen av informationsteknologibaserade informationssystem i verksamheter ska öka värdegenereringen och förbättra verksamhetens infrastruktur. Men för att kunna göra det behövs en analys och utvärdering av den verksamhet man vill förbättra samt en klar bild av vad informationsteknologi är kapabel att åstakomma.
+\\
+\\
+\textbf{Nyckelord:} Informationssystem, system, informationsteknologi, elektronisk handel, Internet.
+
+\tableofcontents
+%  Både litteraturlistan samt det inledande sammandraget 
+%  (abstract) ska vara med i innehållsförteckningen, men ingen av dem
+%  ska ha ett kapitelnummer.
+
+\section{\textsf{Förord}}
+Denna rapport skrevs som en del av kursen "Introduktion till Informationssystem" vid Lunds Universitet, institutionen för informatik, hösten 2010. 
+
+Tänkta läsare är såväl undervisare som studenter på nämnd kurs, men eftersom det är en introduktionskurs inom ämnet informatik har rapporten inga antaganden om förkunskap inom området, och kan därmed även vara till intresse för andra.
+
+Initialt var det bestämt att skrivandet av rapporten skulle ske i en grupp om fyra personer, men p.g.a. diverse externa parametrar samt brister i kommunikationen i gruppen ändrades detta i sista minut och blev ett individuellt arbete.
+
+\section{\textsf{Definitioner}}
+Ämnet informatik --- liksom en klar majoritet av andra ämnen och områden --- har ett områdes-specifikt internt vokabulär av förkortningar,icke-standardiserade och icke-definerade begrepp och uttryck. På grund av detta kommer de begrepp och uttryck som förekommer i rapporten deklareras och defineras (så som de kommer att användas i rapporten) nedan på ett klart och tydligt sätt.
+\\
+\\
+\textbf{System:} Ett ordlexikon på Internet (TheFreeDictionary.com, 2010) definerar ett system som en grupp av interagerande och sammankopplade eller icke-självständiga element som tillsammans bildar en komplex helhet. Denna skildring av system kan även hittas i boken E-business (Beynon-Davies, 2004).
+\\
+\\
+\textbf{Informationssystem (IS):} Ett begrepp som används frekvent, men tolkas och defineras generellt alltid olika, beroende på vilka personer eller grupper som är inblandade. Denna rapport gör ingen egen definition av begreppet IS, utan drar slutsatsen att begreppet noga bör undersökas av läsaren utifrån det aktuella sammanhanget. Det bör dock understrykas att IS som koncept inte är beroende av informationsteknologi (se ICT nedan).
+\\
+\\
+\textbf{Information and communication technology (ICT):} (Sv. Informations- och kommunikationsteknologi.) En term som används för att beskriva och sammanfatta de teknologier som används för att transportera information och data.
+\\
+\\
+\textbf{E-handel:} Är en förkortning av "elektronisk handel" och beskriver den handelsverksamhet som bedrivs över elektroniska system. Exempel på sådana elektroniska system är Internet, men det inkluderar även andra datorbaserade nätverk.
+%\\
+%\\
+%\textbf{Human activity system (HAS):} (Sv. Mänskligt aktivitetssystem, även kallat verksamhetsprocess.) Ett begrepp som beskriver de mänskliga  processerna och aktiviteterna i en del som besitter en nyckelposition inom en organisation eller verksamhet. (Beynon-Davies, 2004)
+%\\
+%\\
+%\textbf{Work system:} 
+
+
+%%%%%%%%%%%%%%%%
+%%  Huvuddel  %%
+%%%%%%%%%%%%%%%%
+
+%  Är tre-delad.
+%  Bör innehålla: syfte, bakgrund/forskningsöversikt, material,
+%  metod, resultat, diskussion/kommentar, slutsats/värdering/summering.
+
+\section{\textsf{Inledning}}
+\subsection{\textsf{Verksamheter, handel och informationsteknologi}}
+%IS ICT E-handel
+%utveckling de senaste/kommande åren
+
+Under det senaste decenniet har den globala ökningen av verksamheter som bedriver elektronisk handel eller på annat sätt använder datorbaserad informationsteknologi varit explosionsartad. % statistik.
+
+Det finns ett flertal anledningar till detta, och vissa är utom denna rapports räckvidd. Dock är en av anledningarna till detta att den globalisering som Internet och nätverk ligger till grund för öppnar en betydligt större marknad för potentiella kunder.
+
+En annan anledning till att verksamheter ökat sin närvaro via de elektroniska kanalerna skulle kunna vara ett försök till att effektivisera och rationalisera de inre strukturer som finns i verksamheten. Det skulle i vissa fall kunna representas i kortare beslutsvägar, sänkta strukturella kostnader samt ett ökat värde av slutprodukten.
+
+\subsection{\textsf{Verksamheten som ett system}}
+Både Alter och Beynon-Davies har gjort försök att sammanfatta verksamheter och delar av verksamheter som olika typer av system.Dessa olika typer av system har de namngivit med tveklöst passande namn och gett en unik definition.
+
+Enligt Beynon-Davies, 2004, är det ett generellt antaget synsätt inom informatiklitteraruren att se på verksamheter som system.
+
+Syftet med detta kan man tolka som ett försök att hitta gemensamma nämnare på sätt att utveckla och effektivisera sättet verksamheter genererar värde på. För att lyckas med detta har författarna undersökt aktiviteter och processer inom verksamheter och därefter försökt generera metoder och förklaringar på hur de kan förbättras.
+
+För att få en övergripande och utvärderingsbar bild av hur en verksamhet eller en del av en verksamhet fungerar tillgriper både Paul Beynon-Davies i sin E-business såväl som Steven Alter i sin The Work System Method ett synsätt där de sammanfattar verksamheten som ett system. Dock skiljer sig de båda författarna sig åt när det gäller såväl namnet på systemet som den exakta definitionen av systemet.
+
+Genom att definera verksamheter eller en del av en verksamhet som ett system, argumenterar författarna för att det systemet kan utvärderas och därefter förbättras.
+
+Det kan tolkas som om att både The Work System Method (Alter, 2006)) samt E-business (Beynon-Davies, 2004) förklarar metoder och synsätt för att förklara, kvantisera, utvärdera verksamheten som ett system. Utifrån  detta argumenterar de sedan att det är möjligt att presentera förbättringar av verksamheten.
+
+\subsection{\textsf{Informationssystem --- en del av verksamheten}}
+Informationssytem kan ses som den process som bedrivs för att kommunicera och transportera information mellan parter i ett system. Per definition behöver inte informationssystem någon typ av informationsteknologi för att fungera --- det fanns informationssystem i alla verksamheter redan innan begreppen elektronisk handel och informationsteknologi introducerades. Dock bör det tilläggas att informationsteknologi har gjort det möjligt att förbättra informationssystemen i alla aspekter, vilket är en anledning till att de båda begreppen ofta används synonymt.
+
+% \subsection{\textsf{Informationssystem och informationsteknologi}}
+% Verksamhet och IT?
+% Hur används det inom företag/verksamhet?
+
+Enligt Beynon-Davies (2004) har man under det senaste decenniet kunnat se en tydlig trend att de ekonomiska marknaderna blir mer och mer inriktade på användningen av elektroniska informationssystem (IS).
+
+Vidare har samtliga av de största globala företagen (listade i \textit{Fortune} Global 500) etablerat en stark närvaro på Internet --- en ökning från 50\% sedan 1997 (Beynon-Davies, 2004).
+
+Syftet med denna rapport är att presentera en jämförande studie av hur två författare --- Alter och Beynon-Davies --- ser på möjligheten att förbättra en verksamhet med hjälp av informationssystem (IS).
+
+Som primära underlag för studien har två böcker använts; \textit{E-business} av Paul Beynon-Davies (Beynon-Davies, 2004), samt \textit{The Work System Method} av Steven Alter (Alter, 2006).
+
+\section{\textsf{Förbättringsmetoder för system}}
+\subsection{\textsf{Vad menas med förbättring av ett system?}}
+och hur beräknar man det
+
+I boken E-business (2004) menar Beynon-Davies att ett system kan förklaras och sammanfattas som ett system. Han ger en klar bild av en definition av denna typ av system, samt en summering av dess delar. Han argumenterar även att ett system inte kan studeras utifrån dess inkluderande delar, utan måste utvärderas utifrån en holistiskt perspektiv.
+
+Utifrån detta poängterar han även att ett system har beräkningsbara parametrar vad gäller effektivitet och prestanda inom alla dess aspekter och hela systemets --- och verksamhetens --- värdekedja.
+
+%\subsection{\textsf{Förbättring av delar eller hela systemet?}}
+%\subsection{\textsf{Metoder för förbättring av systemet? --- Hur?}}
+\subsection{\textsf{Utvärdering av systemet}}
+Utifrån systemets aspekter gällande effektivitet och prestanda menar Beynon-Davies (E-business, 2004) att systemet kan utvärderas.
+
+%\section{\textsf{Sammanfattning}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+%%  Avslutande del  %%
+%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{\textsf{Litteratur}}
+Beynon-Davies, Paul, 2004: \textit{E-Business}. 
+Palgrave Macmillan. 
+ISBN: 978-1-4039-1348-7.
+\\
+\\
+Alter, Steven, 2006: \textit{The Work System Method: Connecting People, Processes, and IT for Business Results}.
+ISBN: 0-9778497-0-8.
+\\
+\\
+TheFreeDictionary.com, 2010. \textit{http://www.thefreedictionary.com/system}
+\\
+\\
+Wikipedia.org, 2010. \textit{http://en.wikipedia.org/wiki/Information\_system}
+
+\appendix
+%\section{\textsf{Bilagor}}
+
+%\section{\textsf{Register}}
+\end{document}

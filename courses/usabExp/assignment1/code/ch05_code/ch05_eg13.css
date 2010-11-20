@@ -1,0 +1,21 @@
+/* CSS Document */
+
+div#navigation {
+  float:left;
+  width:200px;
+  height:100%;
+  color:#ffffff;
+  background-color:#666666;
+  border:1px solid #000000;
+  padding:5px;}
+
+div#content {
+  margin-left:213px;
+  width:600px;
+  height:100%;
+  background-color:#ffffff;
+  border:1px solid #000000;
+  padding:5px;}
+
+a:link, a:visited {color:#ffffff;}
+a {display:block;}

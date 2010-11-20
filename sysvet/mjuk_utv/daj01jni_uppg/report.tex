@@ -1,0 +1,466 @@
+\documentclass[a4paper,12pt]{article}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{color}
+\usepackage{graphics}
+
+
+\title{\textsf{\textbf{SYSA01: Mjukvaruutveckling \\
+    inlämningsuppgifter 1--4}}}
+
+\author{John-Patrik Nilsson \\
+    820610-4070 \\
+	e-post: daj01jni@student.lu.se}
+
+\begin{document}
+
+%\pagestyle{empty}
+\thispagestyle{empty}
+
+\maketitle
+\newpage
+
+\tableofcontents
+
+\newpage
+\section{\textsf{Inlämningsuppgift 1}}
+\subsection{\textsf{Del a}}
+\begin{verbatim}
+import java.io.*;
+import java.util.ArrayList;
+
+class A {
+    public static void main(String[] args) 
+    {
+        ArrayList<String> input_strings = new ArrayList<String>();
+        InputStreamReader input = new InputStreamReader(System.in);
+        BufferedReader reader = new BufferedReader(input);
+        int nbr_of_words = 2;
+        String string = "";
+
+        while (input_strings.size() < nbr_of_words)
+        {
+            System.out.print("Type a word: ");
+
+            string = "";
+            try
+            {
+                string = reader.readLine();
+            }
+            catch(Exception e) {}
+    
+            if (string != "")
+            {
+                // System.out.println("You typed: " + string);
+                input_strings.add(string);
+            }
+        }
+
+        string = "";
+        System.out.print("The concatenated string is: ");
+        for (String s : input_strings)
+        {
+            // System.out.print(s + " ");
+            string += s + " ";
+        }
+        string = string.trim();
+        System.out.print(string);
+        System.out.println(".");
+        System.out.println(string.length());
+    }
+}
+\end{verbatim}
+
+\newpage
+\subsection{\textsf{Del b}}
+\begin{verbatim}
+import java.io.*;
+import java.util.Scanner;
+
+class B {
+    public static void main(String[] args) 
+    {
+        // We need this for the input-mechanic.
+        InputStreamReader input = new InputStreamReader(System.in);
+        BufferedReader reader = new BufferedReader(input);
+
+        // This is the needed user input.
+        String name = "";
+        double salary = 0;
+        int h = 0;
+
+
+        // While we do not have all the info we need,
+        // continue to ask for it.
+        while (name == "")
+        {
+            System.out.println("Ange ditt namn: ");
+            try
+            {
+                name = reader.readLine();
+                name = name.toUpperCase();
+            }
+            catch (Exception e) {}
+        }
+
+        Scanner in_scanner = new Scanner(System.in);
+
+        while (salary == 0)
+        {
+            System.out.println("Ange din timlön: ");
+            try
+            {
+                //tmp_string = reader.readLine();
+                //salary = Double.parseDouble(tmp_string);
+                salary = in_scanner.nextDouble();
+            }
+            catch (Exception e) {}
+        }
+
+        while (h == 0)
+        {
+            System.out.println("Ange dina arbetade timmar: ");
+            try
+            {
+                h = in_scanner.nextInt();
+            }
+            catch (Exception e) {}
+        }
+
+        in_scanner.close();
+
+        // Formatting crap.
+        String out_string = name + " du tjänade " + salary*h + 
+            " kr förra veckan";
+        out_string = out_string.replace(".", ",") + ".";
+
+        System.out.println(out_string);
+    }
+}
+\end{verbatim}
+
+
+\newpage
+\section{\textsf{Inlämningsuppgift 2}}
+\begin{verbatim}
+import java.io.*;
+import java.util.Scanner;
+
+class A {
+
+    public static void main(String[] args)
+    {
+        // Get user input.
+        int a = 0;
+        int b = 0;
+
+
+        Scanner in = new Scanner(System.in);
+
+        while (true)
+        {
+            System.out.print("Ange det första nummret: ");
+            try
+            {
+                a = in.nextInt();
+            }
+            catch (Exception e) {}
+
+            if (a == 0)
+            {
+                break;
+            }
+
+            System.out.print("Ange det andra nummret: ");
+            try
+            {
+                b = in.nextInt();
+            }
+            catch (Exception e) {}
+
+            // Compare values.
+            if (a > b)
+            {
+                System.out.println(a +" är större än "+ b);
+            }
+            else if (b > a)
+            {
+                System.out.println(b +" är större än "+ a);
+            }
+            else if (a == b)
+            {
+                System.out.println("Talen är lika stora.");
+            }
+        }
+
+        System.out.println("Tackar.");
+        in.close();
+    }
+}
+\end{verbatim}
+
+
+\newpage
+\section{\textsf{Inlämningsuppgift 3}}
+\begin{verbatim}
+import java.io.*;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+class A {
+
+    public static void main(String[] args)
+    {
+        ArrayList<Integer> list = new ArrayList<Integer>(5);
+        Scanner in = new Scanner(System.in);
+        int largest = 0;
+        double mean = 0;
+        int sum = 0;
+        int current;    // We don't want to access the list more 
+                        // than we need.
+
+        System.out.println(
+            "Type in 5 numbers, each followed by <enter>:");
+
+        for (int i = 0; i < 5; i++)
+        {
+            try
+            {
+                list.add(in.nextInt());
+            }
+            catch (Exception e) {}
+        }
+
+        for (int i = 0; i < list.size(); i++)
+        {
+            current = list.get(i);
+            // System.out.println(current);
+
+            // Find largest nbr:
+            if (largest < current)
+            {
+                largest = current;
+            }
+
+            // Calculate sum:
+            sum += current;
+        }
+
+        // Calculate mean:
+        mean = (double) sum / (double) list.size();
+
+        System.out.println("Largest number: " + largest);
+        System.out.println("Sum: " + sum);
+        System.out.println("Mean value: " + mean);
+    }
+}
+\end{verbatim}
+
+
+\newpage
+\section{\textsf{Inlämningsuppgift 4}}
+\subsection{\textsf{testBankAccount.java}}
+\begin{verbatim}
+import java.io.*;
+
+class TestBankAccount {
+    
+    public static void main(String[] args)
+    {
+        String id = "meow_01";
+        BankAccount account = new BankAccount(id);
+        String category;
+
+
+        // Test initial balance.
+        category = "Initial balance";
+
+        if (account.getBalance() == 0)
+        {
+            System.out.println(category + " is correct!");
+        }
+
+
+        // Test id.
+        category = "id";
+
+        if (account.getId().equals(id))
+        {
+            System.out.println(category + " is correct!");
+        }
+
+
+        // Test deposit.
+        category = "Deposit function";
+
+        if (account.deposit(100))
+        {
+            if (account.getBalance() == 100)
+            {
+                System.out.println(category + " is correct!");
+            }
+        }
+
+
+        // Test legal withdraw.
+        category = "Legal withdraw function";
+
+        if (account.withdraw(account.getBalance()))
+        {
+            if (account.getBalance() == 0)
+            {
+                System.out.println(category + " is correct!");
+            }
+        }
+
+
+        // Test illegal withdraw.
+        category = "Illegal withdraw function";
+
+        if (account.withdraw(account.getBalance()+1) == false)
+        {
+            System.out.println(category + " is correct!");
+        }
+    }
+}
+\end{verbatim}
+
+\newpage
+\subsection{\textsf{bankAccount.java}}
+\begin{verbatim}
+class BankAccount {
+
+private String id;
+private int balance;
+
+    public BankAccount(String id)
+    {
+        this.id = id;
+        this.balance = 0;
+    }
+
+    public BankAccount(String id, int balance)
+    {
+        this.id = id;
+        this.balance = balance;
+    }
+
+    public String getId()
+    {
+        return id;
+    }
+
+    public int getBalance()
+    {
+        return balance;
+    }
+
+    // I know this should return void, but boolean is more useful.
+    public boolean deposit(int amount)
+    {
+        balance += amount;
+        return true;
+    }
+
+    public boolean withdraw(int amount)
+    {
+        if (balance >= amount)
+        {
+            balance -= amount;
+            return true;
+        }
+        else
+        {
+            // Insufficient funds.
+            return false;
+        }
+    }
+}
+\end{verbatim}
+
+\newpage
+\subsection{\textsf{atm.java}}
+\begin{verbatim}
+import java.io.*;
+import java.util.Scanner;
+
+class Atm {
+    
+    public static void main(String[] args)
+    {
+        BankAccount account = new BankAccount("meow_02");
+        Scanner in = new Scanner(System.in);
+        boolean again = true;
+        boolean deposit, withdraw;
+        int amount;
+
+        while (again)
+        {
+            deposit = false;
+            withdraw = false;
+
+            System.out.print("Press 0 to deposit or 1 to withdraw: ");
+            try 
+            {
+                int tmp = in.nextInt();
+                if (tmp == 0) // This means deposit.
+                {
+                    deposit = true;
+                    withdraw = false;
+                }
+                else if (tmp == 1) // This means withdraw.
+                {
+                    deposit = false;
+                    withdraw = true;
+                }
+                else // This means the user is dumb.
+                {
+                    deposit = false;
+                    withdraw = false;
+                }
+            }
+            catch (Exception e) {}
+
+            // If the user doesn't want anything.
+            if (!deposit && !withdraw)             
+            {
+                // continue;
+
+                System.out.println("Bye!");
+                //again = false;
+                break;
+            }
+
+            System.out.print("Amount: ");
+            try
+            {
+                amount = in.nextInt();
+                if (deposit)
+                {
+                    account.deposit(amount);
+                }
+                else if (withdraw)
+                {
+                    account.withdraw(amount);
+                }
+            }
+            catch (Exception e) {}
+
+            System.out.println("Current balance: "+account.getBalance());
+            System.out.print("Do you want to play again? (y/n): ");
+            try
+            {
+                String ans = in.next();
+                if (ans.equals("n"))
+                {
+                    again = false;
+                }
+            }
+            catch (Exception e) {}
+        }
+    }
+}
+\end{verbatim}
+
+\end{document}

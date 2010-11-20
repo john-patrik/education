@@ -1,0 +1,13 @@
+/* CSS Document for ch03_eg29.html */
+p {font:12pt arial;}
+
+/* positioned in relation to containing element */
+img.baseline {vertical-align:baseline;}
+img.middle {vertical-align:middle;}
+img.sub {vertical-align:sub;}
+img.super {vertical-align:super;}
+img.text-top {vertical-align:text-top;}
+img.text-bottom {vertical-align:text-bottom;}
+/* positioned in relation to the line the element is part of */
+img.top {vertical-align:top;}
+img.bottom {vertical-align:bottom;}

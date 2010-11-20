@@ -1,0 +1,34 @@
+Högst prioritet
+##############################################################
+RMI
+CGI/Servlets/JSP (JSP = Java Server Pages) (Servlets = Faster than RMI, simpler than SOAP)
+Monitortekniken - wait()/notifyAll() {Binary semaphor, Mutual exclusion, Race condition, Priority} 
+ (Don't launch threads in a constructor, make a separate method) 
+ (Synchronization = massive performance loss, can lead to deadlock, should be used as a last resort to ensure thread safety, alternatively make objects immutable or make objects use private variables/objects)
+ (Deadlock = multiple threads hog parts of the same needed resource; avoid unnecessary synchronization, can use join() to avoid)
+
+
+Medelprioritet
+##############################################################
+Buffring/Flush/Deadlock
+TCP/UDP (Transport layer)
+URL/URI/URN (Uniform Resource Locator, Uniform Resource Identification, Uniform Resource Name)
+*Multicasting
+DatagramSocket/setSoTimeout()
+
+
+Låg prioritet
+##############################################################
+RTP = Real-time Transport Protocol
+RTCP = RTP Control Protocol
+RTSP = Real-time Streaming Protocol
+*SIP/SDP (Används för att starta och konfigurera en nätverksförbindelse)
+RTCP
+Codec
+SDP
+Protocol handler i Java
+XML = Extensible Markup Language
+DTD = Document Type Definition (Belongs to an XML document)
+DOM (Document Object Model)
+RFC = Request For Comment (IETF standardization suggestion)
+Stateful/stateless protocols (Remember sessions)

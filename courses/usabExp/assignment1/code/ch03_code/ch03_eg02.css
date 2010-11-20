@@ -1,0 +1,7 @@
+/* CSS Document for ch03_eg02.html */
+
+p.one {font-family:arial, verdana, sans-serif;}
+p.two {font-family:times, "times new roman", serif;}
+p.three {font-family:courier, "courier new", monospace;}
+p.four {font-family: Zapf-Chancery, Santivo, cursive;}
+p.five {font-family:Cottonwood, Studz, fantasy;}

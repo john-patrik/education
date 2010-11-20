@@ -1,0 +1,21 @@
+/* CSS Document for ch01_eg03.html */
+
+body {
+  background-color:#000000;
+   font-family: arial, verdana, sans-serif;}
+
+div.page {
+  width:650px;
+  border-style:solid; border-width:1px; border-color:#666666;}
+div.heading {background-color:#999999; padding:10px;}
+div.body {background-color:#EFEFEF; padding:10px;}
+
+h1 {
+  font-size:22pt; 
+  color:#000066;}
+h2 {
+  font-size:18pt;
+  color:#000066;}
+p {
+  font-size:14pt; 
+  color:#000000;} 

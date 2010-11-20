@@ -1,0 +1,21 @@
+Hej =).
+
+Jag ser vad du skriver och jag har funderat. Det som är gemensamt för RIA:s
+är att det ofta förekommer formulär och inmatning i dhtml-editorer. Det
+förekommer även rendering av html-kod vilken nästan alltid presenteras
+tillsammans med en css.
+
+Det jag vill att du utreder är anpassningen av formulär och editorer till
+WAI, WCAG, 24h-webben och även ATAG. Gör sedan en applikation tex i Ruby
+eller PHP. Det behöver inte alls vara en jätteapplikation utan snarare ett
+exempel på hur man kan bygga så att det blir bra. Jag tycker själv att man
+ofta ser applikationer där funktionen är någorlunda bra utan att den som
+gjort applikationen inte har någon större koll på html och css. En riktigt
+tricksig del är färdiga komponenter som tex FCK-edit eller tiny-MCE som ofta
+används. Hur är de för en som är synsvag?
+
+Låter det bra eller bra? Nej nu var jag dum - vad tror du om det?
+
+/ Per 
+----------------------------------------------------------------------
+

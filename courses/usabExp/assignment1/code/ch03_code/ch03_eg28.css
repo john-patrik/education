@@ -1,0 +1,10 @@
+/* CSS Document */
+body {font-family:arial, verdana, sans-serif;
+  font-size:12px;}
+
+p {width:400px;}
+
+.one {line-height:normal;}
+.two {line-height:18px;}
+.three {line-height:1.5em;}
+.four {line-height:1.9ex;}

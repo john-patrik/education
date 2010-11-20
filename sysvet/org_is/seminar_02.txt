@@ -1,0 +1,35 @@
+Version 0.1 (bara en kladd med stödord).
+
+Uppgift:
+* Föreslå lämplig organisation.
+* Föreslå produktionsprocess.
+
+
+Lämplig organisation
+
+Stödord: organisation, organisationsmedlemmar, kundkontakter, organisationsenheter, organisationspyramiden, organisationsschema, befattningsbeskrivning, formell/informell organisation, beslutsnivå, befogenhet/ansvar, delegering, decentralisering.
+
+Eftersom vårt företag sätter kunden i fokus är vår organisationspyramid vänd mot kunden.
+
+Vanliga "äldre" organisationsformer:
+* Funktionsorganisation - en horinsontell arbetsfördelning med organisationens huvud/affärsfunktioner (t.ex. inköp, tillverkning, ekonomi, försäljning). Vid större organisationer uppstår det ofta konflikter mellan dessa funktioner.
+* Divisionsorganisation - verksamheten är organiserad i självständiga resultatenheter kallade divisioner vilka i teorin ska fungera som ett eget företag. Vanligt att större företag använder denna typ av organisation. Koncernledningen styr divisionerna, och varje division styrs av divisionsledningen.
+* Matrisorganisation - en organisation där organisationsmedlemmarna kan ha flera chefer och där verksamheten har flera mindre specialistfunktioner som samarbetar men har ansvar för sitt eget område. Jävligt luddigt.
+
+Beslutsorganisationer:
+* Linjeorganisation - varje underordnad har bar en chef.
+* Linje-stabsorganisation - innehåller staber vilka är en expertgrupp utan orderrätt och som endast har en rådgivande funktion. Staben står utanför "linjen".
+* Funktionell organisation - varje underordnad har mer än en chef. Varje chef har ansvar och orderrätt inom sitt speciella arbetsområde.
+
+Nya organisationsformer:
+* Horisontell organisation - teambaserade verksamhet som fokuserar på kundvärdet.
+* Projektorganisation - för varje projekt sätts ett team (task force) ihop av organisationsmedlemmarna som är mest lämpade för att lösa uppgiften. Organisationen lägger även resurser på kompetensutveckling.
+* Nätverksorganisation (affärsnätverk) - verksamheterna blir mindre och fokuserar på dess kärnkompetens men måste p.g.a. det samarbeta tätt med andra företag, på så vis bildas ett affärsnätverk.
+
+En bra organisation är målinriktad, effektiv och där organisationsmedlemmarna upplever motivation och arbetsglädje. Det är även viktigt att organisationen har förgmågan att lära -- att ständigt förändras mot det bättre (kaizen).
+
+De "äldre" hierarkiska organisationsformerna är idag ansedda som kostsamma, långsamma samt att den ofta sätter chefen i fokus istället för kunden.
+
+Eftersom vårt företag sätter kunden i fokus är det viktigt för oss att minska alla kostnader, både vad gäller ekonomi samt tid, som inte ger ett ökat kundvärde. Därför är vår organisation utformad på ett horisontellt teambaserat sätt, där varje team är självstyrande utifrån de ramar ledningen sätter. Varje team har de befogenheter och den kompetens som behövs för att kunna utföra de uppgifter som krävs för att tillfredställa kundens önskningar med minimal styrning från ledningen. 
+
+Vårt mål är att ständigt förbättra och utveckla vår organisation så att självstyre, ansvar, handlingsfrihet och motivation blir så stort som möjligt hos de anställda. Vi tror att detta resulterar i en snabbare och en mer kvalitativ service för kunden.

@@ -1,0 +1,123 @@
+\documentclass[a4paper,12pt]{article}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[swedish]{babel}
+\usepackage{color}
+\usepackage{graphics}
+
+
+\title{\textsf{\textbf{SYSA01: Systemanalys \& modellering \\
+    inlämningsuppgifter}}}
+
+\author{John-Patrik Nilsson \\
+    820610-4070 \\
+    e-post: daj01jni@student.lu.se}
+
+\begin{document}
+
+%\pagestyle{empty}
+\maketitle
+\thispagestyle{empty}
+
+\newpage
+\tableofcontents
+
+\newpage
+\section{\textsf{Introduktion}}
+\subsection{\textsf{Definitioner}}
+\begin{description}
+\item[Probleområde:] Systemets syfte, innehåller bl.a. händelsetabeller och klassdiagram. Kan även beskrivas som systemets funktionella krav. Förklarar vad systemet gör.
+\item[Användningsområde:] Beskriver hur systemets beteende och hur det agerar för att uppnå sitt syfte. Dokumentation av användningsområde innehåller ofta aktörtabeller, användningsfall, aktördefinitioner, gränssnitt och funktionslistor.
+\item[Aktörer:] Defineras som någon eller något som inte tillhör målsystemet men på något sätt interagerar med det. Aktörer kan även vara andra system.
+\item[Användningsfall:] Beskriver interktionen mellan systemet och dess aktörer.
+\end{description}
+
+\subsection{\textsf{Användningsfall}}
+Ett smidigt sätt att utforma användningsfall\footnote{Personligen är jag ett fan av Agila programmeringsmetoder och tycker därför att use cases borde ersättas av kortare User Stories.} är att använda sig av följande process:
+
+\begin{enumerate}
+\item Identifiera systemets aktörer.
+\item Definera och beskriv aktörernas interaktion med systemet. Aktörernas olika arbetsuppgifter där de använder systemet är ett användningsfall.
+\end{enumerate}
+
+Användningsfall kan även beskrivas med hjälp av ett tillståndsdiagram.
+
+Enligt Wikipedia bör ett Use Case:
+\begin{itemize}
+\item Beskriva vad systemet bör göra för att en aktör ska kunna uppnå ett specifikt mål.
+\item Inte innehålla implementationsspecifikt språk.
+\item Ha en relevant detaljnivå.
+\item Inte innehålla detaljer angående användargränssnitt eller andra gränssnitt.
+\end{itemize}
+
+\subsection{\textsf{Aktörspecifikation}}
+En aktörspecifikation består av följande delar:
+
+\begin{description}
+\item[Mål:] Vilka mål aktören förväntas uppnå genom att använda systemet.
+\item[Kännetecken:] Vilka attribut (t.ex. erfarenhet) aktören förväntas ha.
+\item[Exempel:] Beskriv ett exempel då aktören interagerar med systemet.
+\end{description}
+
+\newpage
+\section{\textsf{Inlämning 1: Systemval}}
+\subsection{\textsf{Systemdefinition}}
+Ett elektroniskt nätverksbaserat system som ska underlätta kommunikationen och de administrativa sysslorna i företaget LagerVara AB. Systemet används speciellt för att hantera information om varorna som finns på olika lager, men även för att underlätta kommunikationen mellan anställda på företaget samt mellan lager och huvudkontor.
+
+Systemet underlättar updateringen av varuinformationen genom att använda nätverkskopplade streckkodsläsare vilka alla anställda har möjlighet att använda. Dessutom rationaliserar det nya systemet bort arkiveringen genom att använda en elektronisk databas.
+
+\subsection{\textsf{Lösningar}}
+Vid granskning av verksamhetsbeskrivningen och interaktionen mellan de anställda i det existerande systemet identifierades speciellt ett antal problem som det nya IT-baserade systemet har som mål att lösa.
+
+\begin{itemize}
+\item Administrationen av varuinformation tar lång tid.
+\item Administrationen av varuinformationen kostar mycket (arbetstimmar).
+\item Administrationen av varuinformationen är bräcklig; den är helt beroende av att ett fåtal anställda på lagret sköter uppgiften.
+\item Lagringen av varuinformationen är bräcklig; det är endast ett fåtal anställda som vet var lagringen tar plats (var pärmen med korten finns). Dessutom finns det inga säkerhetskopior.
+\item Lagringen av varuinformationen är ej centraliserad, vilket gör det väldigt kostsamt för huvudkontoret att hålla sig uppdaterad om statusen på de olika lager som ingår i företaget.
+\end{itemize}
+
+\subsection{\textsf{Aktördefinitioner}}
+\begin{description}
+\item[Lageranställd:] Anställd på lagret, har möjlighet att ta rollen som ansvarig.
+\item[Lageransvarig:] Ansvarar för informationen om lagrets varor. Hanterar varukorten och dess databas (pärmen). Har även ansvar för beställning av nya varor ifall lagret börjar ta slut.
+\item[Huvudkontoret:] Tar emot beställningar från lagren och ser till att det skickas transporter till lagren för påfyllning av varorna.
+\item[Leverantör:] Levererar varor till lager.
+\end{description}
+
+\subsection{\textsf{Användningsfall}}
+\begin{enumerate}
+\item En vara säljs och lämnar således lagret: Den anställda som har ansvaret för varan läser av dess streckkod. Varan registreras i databasen då som skeppad och ej längre närvarande på lagret.
+\item Antalet varor som finns registrerade i databasen blir lika eller mindre än beställningspunkten: Systemet gör lageransvarig uppmärksam på att denne bör göra en beställning av varan till huvudkontoret.\footnote{Man bör utforma systemet så att beställning kan ske automatiskt till huvudkontoret, men det är min åsikt att man bör iakta försiktighet med alltför automatiska system, åtminstone tills det är testat och stabilt. Det finns en risk att ett system går åt helvete någon gång och då är det bra med mänskliga beslut i de kritiska skedena.} Beställningen görs elektroniskt via ett intuitivt användargränssnitt. Lageransvarig som gör beställningen interagerar då med huvudkontorets datorbaserade system och har således ingen personlig kontakt med en anställd på huvudkontoret.
+\item Leverantör ankommer med nya varor: Den anställda som har ansvaret för mottagandet av nya varor använder streckkodsläsare för att läsa in varorna och registra dem i databasen som existerande på lagret.
+\item Lagret saknar en lageransvarig: En godtycklig lageranställd tar över rollen som lageransvarig.
+\end{enumerate}
+
+
+\subsection{\textsf{Identifierade objekt}}
+Som ett första steg i systemanalysen lästes verksamhetsbeskrivningen och samtidigt antecknades de substantiv som hittades. Detta är ett effektivt sätt att hitta kandidater för objektorienterade klasser och objekt.
+
+\begin{itemize}
+\item Lager
+\item Lageransvarig
+\item Lageranställd
+\item Vara
+\item Kortdatabas
+\item Leverantör
+\item Huvudkontor
+\end{itemize}
+
+\subsection{\textsf{Domänmodell (Domain Object Model)}}
+
+\subsection{\textsf{Klassdiagram}}
+
+\newpage
+\section{\textsf{Inlämning 2: Modellering 1}}
+
+\newpage
+\section{\textsf{Inlämning 3: Modellering 2}}
+
+\newpage
+\section{\textsf{Inlämning 4: Användningsområde}}
+
+\end{document}

@@ -1,0 +1,5 @@
+/* CSS Document */
+
+ul.inside { list-style-position:inside;}
+ul.outside {list-style-position:outside;}
+ul {width:170px;}

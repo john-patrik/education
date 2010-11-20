@@ -1,0 +1,9 @@
+/* CSS Document for ch03_eg16.html */
+td {
+  width:300px;
+  font:12pt arial;}
+
+td.leftAlign {text-align:left;}
+td.rightAlign {text-align:right;}
+td.center {text-align:center;}
+td.justify {text-align:justify;}

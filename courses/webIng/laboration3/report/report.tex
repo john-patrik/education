@@ -1,0 +1,96 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[swedish]{babel}
+\usepackage{color}
+\usepackage{graphics}
+
+\title{Webbteknik för ingenjörer \\
+	Laboration 3}
+\author{John-Patrik Nilsson \\
+	e-mail: jpatrik.nilsson@gmail.com \\
+	Skype: j-p.nilsson}
+
+\begin{document}
+
+\maketitle
+%\tableofcontents
+
+\pagestyle{empty}
+\thispagestyle{empty}
+
+\section{Abstract}
+This report is meant as a tutorial of how to create a website using the Django framework as well as a simple introduction to the framework.
+
+\textbf{Keywords:} Django, MVC, model-view-controller, Python, web framework.
+
+\section{Laboration}
+\subsection{Introduction}
+The objective of this laboration and report is to introduce the Python-based Open Source web framework Django by describing the step-by-step creation of a website using said framework.
+
+The first part of this report will present a brief description of the Python programming language as well as a little bit of the history of the Django framework.
+
+Following this short introduction to the technologies involved, the report will continue with a tutorial-like description of how to create and set up a website using the Django framework.
+
+\subsection{The Python language}
+\subsubsection{User friendly}
+Python is a dynamically typed high-level programming language which is intended to be highly readable, using for example whitespace indentation to delimit blocks and English keywords where other programming languages use punctuation. It is unfortunately sometimes referenced to as a scripting language, but is in fact a fully featured language with garbage collection, unicode support, and with a large and comprehensive standard library. Even though Python supports primarily the object-oriented programming paradigm it also supports other programming styles to varying degrees, including functional.
+
+The developers of Python also have the explicit goal of making the language fun to use which is reflected in the fact that the name itself is taken from the british television series \textit{Monthy Python's Flying Circus}.
+
+\subsubsection{Idioms}
+There is also a form of informal doctrine in the Python community which favors a readable, clear and simple coding style. Code which has been produced with clarity, simplicity and readability in mind is often called \textit{Pythonistic} by the Python user base. For example, in the \textit{Python Cookbook} (2nd ed., p. 230) Alex Martelli writes: "To describe something as clever is NOT a compliment in the Python culture.".
+
+\subsubsection{Small core, highly extensible}
+Python is also designed to be highly extensible, which has the benefit of enabling time-critical functions and/or modules to be rewritten in a low-level language like C or C++.
+
+\subsubsection{Open Source}
+The reference implementation of Python -- CPython -- is Open Source software and the development of Python is a transparent community-based effort.
+
+\subsection{Django}
+\subsubsection{What is it}
+Django is a web application framework written in and driven by Python. Its primary goal and strength is the rapid development of database-driven websites and web applications. 
+
+Django adheres to the popular MVC (model-view-controller) development pattern, even though it implements its own slightly different version of it. 
+
+\subsubsection{Concepts}
+Django is developed with the concepts of "pluggability" (loose coupling of its modules) and DRY (Don't Repeat Yourself) as focal points. This is helped by the use of Python as its development language.
+
+\subsubsection{History}
+Django was developed to manage the several news-oriented websites for \textit{The World Company} of Lawrence, Kansas, and because of this it provides good support for developing and maintaining web applications which mimics this behaviour.
+
+It was released publicly under the BSD licence in 2005. As of 2008 the Django Software Foundation is responsible of the development and maintaining of Django.
+
+\subsubsection{Why use it}
+Django is driven by Python which is a dynamic and expressive object-oriented high-level language. It has its own ORM (object-relational-mapper), a testing framework, its own template language, and a form validation framework, tools for generating RSS and Atom feeds. Django also includes a powerful admin interface and its own lightweight web server for testing purposes.
+
+Furthermore, since Django is Open Source its development is transparent and community driven; everyone is free to learn it, use it, and improve it. It has great documentation and helpful community with an IRC channel.
+
+\subsubsection{Why not to use it}
+Most web hotels and low-cost hosting services offers limited support for anything other than PHP- and MySQL-based frameworks which might make a Django project hard to deploy. 
+
+However, since large projects and websites typically is most suited to be hosted on dedicated servers or on VPS'es (Virtual Private Server) this would not be a problem, since they offer control over the entire hosting environment.
+
+\appendix
+\section{References}
+\subsection{Python}
+\begin{verbatim}
+http://en.wikipedia.org/wiki/Python_(programming_language)
+\end{verbatim}
+
+\section{Code listing}
+\section{Text representation}
+\begin{itemize}
+\item \textcolor{magenta}{code} 
+\begin{verbatim} 
+verbatim
+\end{verbatim}
+\item \textcolor{magenta}{lists}
+\begin{description}
+\item \textcolor{magenta}{a} is the letter a.
+\item \textcolor{magenta}{b} is the next letter.
+\item \textcolor{magenta}{c} is last.
+\end{description}
+\end{itemize}
+
+\end{document}

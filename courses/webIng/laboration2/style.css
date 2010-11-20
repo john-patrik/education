@@ -1,0 +1,92 @@
+body {
+	color: black;
+	background-color: white;
+	font-family: verdana;
+	font-size: small;
+
+	width: 800px;
+	margin: 0px auto;
+
+	border: 1px solid #999999;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+}
+body.index #menu a.index, 
+body.two #menu a.two, 
+body.three #menu a.three, 
+body.four #menu a.four, 
+body.five #menu a.five {
+	font-weight: bold;
+	border: 1px solid #999999;
+	color: black;
+	background-color: #ffffcf;
+}
+body.index span.index, 
+body.two span.two, 
+body.three span.three, 
+body.four span.four, 
+body.five span.five {
+	position: absolute;
+	padding-top: 2.2em;
+	margin-left: -0.7em;
+	color: grey;
+	font-size: 90%;
+	display: block;
+}
+/* --------------------------------------------------------- */
+div#header {
+	width: 800px;
+	height: 258px;
+	background-image:
+	url('pics/banner.gif');
+}
+div#footer {
+	padding: 0em 10em;
+	color: white;
+	background-color: grey;
+}
+/* --------------------------------------------------------- */
+div#menu {
+	background-color: #ffff33;
+	width: 800px;
+	border-top: 1px solid #999999;
+	border-bottom: 1px solid #999999;
+}
+#menu ul {
+	margin: 0;
+	padding: 0.5em;
+	padding-left: 4em;
+}
+#menu li {
+	padding-left: 3em;
+	padding-right: 3em;
+	display: inline;
+	position: relative;
+}
+#menu a {
+	text-decoration: none;
+	color: grey;
+	padding: 0.1em 0.6em;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #ffff33;
+}
+#menu a:hover {
+	color: black;
+	background-color: #ffffcf;
+	border: 1px solid #999999;
+}
+/* --------------------------------------------------------- */
+div#content {
+	background-image:url('pics/Tussilago.gif');
+	background-repeat: no-repeat;
+	background-attachment: scroll;
+	background-position: bottom right; 
+
+	padding: 4em 10em;
+}
+/* --------------------------------------------------------- */
+span {
+	display: none;
+}
+/* --------------------------------------------------------- */

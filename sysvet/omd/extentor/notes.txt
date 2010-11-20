@@ -1,0 +1,71 @@
+@@@ Detta kommer antagligen på tentan @@@
+
+Systemdefinition, VATOFA
+
+Aktörer 
+
+Användningsfall, tabell, diagram
+
+Objektorienterad modell, klassdiagram, attribut
+
+Förekomstexempel
+
+Verksamhetsregel
+
+Associationsklass
+
+Symbolisk modell
+
+Rollmönster
+
+Dialogstilar
+
+Svag klass
+
+Funktion består av avläsning, uppdatering, signalering, beräkning
+
+
+@@@ Extenta 1 @@@
+
+* villkor
+snabb utveckling
+förbered för expandering, gör att systemet kan
+hantera andra produkter
+
+* aktiviteter
+sälja
+beställa
+betala
+registrera
+kundkontakt
+kundsupport
+hantera fakturor
+ha hand om sena betalningar
+larma ekonomiavdelningen
+hantering av cd-produkterna
+
+* aktörer
+företag
+musiker
+kunder
+prenumeranter
+säljare
+ekonomisystem
+produktansvarig
+
+* objekt
+kundinformation
+cd-samling
+annonser-formulär
+
+V, Villkoren: Utvecklingen bör gå snabbt. Systemet bör kunna hantera andra produkter än CD-samlingar, dvs. det är hyfsat abstrakt. Användarna av systemet är datorvana, och de ska interagera med ett GUI.
+
+A, Användningsområde: Säljare, produktamsvarig, ekonomisystem.
+
+T, Teknologi: 
+
+O, Obkekt: 
+
+F, Funktionalitet: 
+
+A, Ansvar: 

@@ -1,0 +1,4 @@
+/* CSS Document for ch03_eg04.html */
+p {font-family:arial; font-size:12pt;}
+p.normal {font-variant:normal;}
+p.smallcaps {font-variant:small-caps;}

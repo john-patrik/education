@@ -1,0 +1,145 @@
+Kap 16
+
+Uppg
+
+10
+A)
+V=TI-TK=0 => V=(m*p) – FK – RK=0 => p = RK + FK/m
+20 * m = 200000 => m = 10000
+
+Svar: Vid m = 10000.
+
+B)
+Resultattabell: m = 15 000
+TI =    600 000
+FK =    200 000
+RK =    300 000
+TK =    500 000
+V  =    100 000
+
+Svar: Säkerhetsmarginalen är, 
+5 000 / 15 000 = 33%.
+
+C)
+Resultatdiagram:
+[bild]
+
+11
+A)
+Svar: Skillnaden är 200 000 kr på 10 000 st. Alltså är RK/st 200 000 / 10 000 = 20 kr/st.
+
+B)
+Vid m = 10 000 är TI = 400 000 kr.
+p = TI / m -> p = 400 000 / 10 000 = 40 kr/st.
+
+C)
+Vid m = 0 är FK = 200 kkr.
+
+D)
+TB = 40 - 20 = 20 kr.
+
+E)
+10 000 st.
+
+F)
+400 000 kr.
+
+G)
+TG = TB / p = 20 / 40 = .5 => 50 %.
+
+H)
+Säkerhetsmarginal = aktuella volymen - kritiska volymen;
+m = 20 000 - 10 000 = 10 000 st.
+Eller, 10 000 / 20 000 = .5 => 50 %.
+
+I)
+Resultattabell: m = 20 000
+TI =    800 000
+TK =    600 000
+V  =    200 000
+
+Svar: 200 000 kr.
+
+12
+På 400 ton har TK ökat med,
+98 400 000 - 80 000 000 = 18 400 000 kr, vilket blir,
+46 000 kr/ton. RK = 46 000 kr/ton.
+
+Svar: FK = 6 400 000 kr.
+
+15
+A)
+Resultattabell: 
+m       0               5000            10 000
+TI      0               875 000         1 750 000
+FK      300 000         300 000         300 000
+RK      0               650 000         1 300 000
+TK      300 000         950 000         1 600 000
+V       -300 000        -75 000         150 000
+
+[bild]
+
+B)
+Kritisk volym: 6666.7.
+kritisk omsättning: 6666.7 * 175 = 1 166 673 kr.
+
+C)
+TI = 8200 * 175 = 1 435 000 kr.
+TI(k) = 1166673 kr.
+Säkerhetsvolym = 8200 - 6667 = 1533 st.
+I procent: 1533 / 8200 = 19 %.
+I kr: 1435000 - 1166673 = 268290 kr.
+
+16
+A)
+[bild]
+
+B)
+p = FK / m + RK. 
+p = 12.
+FK = 175000.
+RK = 5.
+Kritisk volym = m = 175 000 / 7 = 25 000 st.
+Kritisk omsättning: 25 000 * 12 = 300 000 kr.
+
+17
+A)
+m = 12 000 / 200 = 60 st.
+Kritisk volym = 60 st.
+Kritisk omsättning = 30 000 kr.
+
+B)
+Säkerhetsmarginal: 40 000 - 30 000 = 10 000 kr.
+I procent: 10 000 / 40 000 = 25 %.
+
+C)
+V = 40 000 - 36 000 = 4 000 kr.
+TB = 500 - 300 = 200 kr.
+TTB = 200 * 80 = 16 000 kr.
+
+18
+A)
+TI = 50
+TK = 41
+RK = 41
+TB = 50 - 41 = 9.
+
+B)
+TG = 9 / 50 = 18 %.
+
+C)
+41 / 50 = 82 %.
+
+D)
+TI (100%)  =   TG (18%)  +   RK (82%)
+
+19
+FK = 420 000 kr.
+p = 20 kr.
+TG = 20%.
+TG = TB / p
+TB = 0.2 * 20 = 4.
+TB = p - RK.
+4 = 20 - RK => RK = 16 kr.
+
+Svar: 16 kr.

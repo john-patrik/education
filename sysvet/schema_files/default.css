@@ -1,0 +1,141 @@
+/* Base color: #00497F */
+
+body                  { background: #EEEEEE; color: #000000; margin: 20px; text-align: center; }
+body#rollbody         { background: #FFFFFF; color: #000000; margin: 20px; text-align: left; }
+body.reservation      { background: #EEEEEE; color: #000000; margin: 20px; text-align: left; }
+
+table#maintable       { margin-left: auto; margin-right: auto; }
+td#headertd           { background: #EEEEEE; color: #000000; padding: 0px; }
+td#contenttd          { background: #FFFFFF; color: #000000; border: 1px solid #00497F; padding: 9px; }
+td#footertd           { padding-top: 5px; }
+
+td#custfootertd       { padding: 5px 0px; border-bottom: 1px solid #00497F; }
+
+table#maintablesmall  { margin-left: auto; margin-right: auto; }
+td#headertdsmall      { background: #EEEEEE; color: #000000; padding: 0px; }
+td#contenttdsmall     { background: #FFFFFF; color: #000000; border: 1px solid #555555; padding: 9px; }
+      		      
+td#header_top_left    { background: url("/img/header/top_left_blue.gif"); width: 10px; height: 12px; }
+td#header_top_center  { background: url("/img/header/top_center_blue.gif"); width: 1px; height: 12px; }
+td#header_top_right   { background: url("/img/header/top_right_blue.gif"); width: 10px; height: 12px; }
+
+td#header_center_left   { background: url("/img/header/center_left_blue.gif"); width: 10px; height: 1px; }
+td#header_center_logo   { background: #00497F url("/img/header/logo_blue.gif"); color: #FFFFFF; background-position: center; background-repeat: no-repeat; width: 98px; height: 17px; }
+td#header_center_center { background: #00497F; color: #FFFFFF; }
+td#header_center_right  { background: url("/img/header/center_right_blue.gif"); width: 10px; height: 1px; }
+
+td#header_bottom_left   { background: url("/img/header/center_left_blue.gif"); width: 10px; height: 1px; }
+td#header_bottom_center { background: #00497F; color: #FFFFFF; width: 1px; height: 10px; }
+td#header_bottom_right  { background: url("/img/header/center_right_blue.gif"); width: 10px; height: 1px; }
+
+#header	                { font-size: 20px; font-weight: bold; }
+
+div#headinfo            { text-align: left }
+
+span#copyright          { font-size: 10px; color: #555555; }
+a#copyrighta:link       { text-decoration: none; font-size: 10px; color: #0000CC; }
+a#copyrighta:visited    { text-decoration: none; font-size: 10px; color: #0000CC; }
+a#copyrighta:hover      { text-decoration: none; font-size: 10px; color: #0000CC; }
+a#copyrighta:active     { text-decoration: none; font-size: 10px; color: #0000CC; }
+
+span#newlastmodified    { font-size: 10px; color: #CC0000; }
+span#lastmodified       { font-size: 10px; color: #000000; }
+
+H1,H2,H3,H4,P,TABLE,TR,TD,BIG,BODY,INPUT,SELECT { font-family: Verdana; color: #000000; }
+
+H1                  { font-weight: normal}
+
+TABLE,INPUT,SELECT  { font-size: 11px}
+
+SMALL               { font-family: Verdana; font-size: 10px; }
+
+A:link              { text-decoration: none ; color: #0000CC }
+A:visited           { text-decoration: none ; color: #0000CC }
+A:hover             { text-decoration: none ; color: #0000CC }
+A:active            { text-decoration: none ; color: #0000CC }
+
+TABLE.menu          { background: #FFFFFF   ; border-color: #CCCCCC }
+A.menu:link         { text-decoration: none ; color: #0000CC        }
+A.menu:visited      { text-decoration: none ; color: #0000CC        }
+A.menu:hover        { text-decoration: none ; color: #0000CC        }
+A.menu:active       { text-decoration: none ; color: #0000CC        }
+
+TABLE.options       { background: #FFFFFF   ; border-color: #CCCCCC }
+A.options:link      { text-decoration: none ; color: #0000CC        }
+A.options:visited   { text-decoration: none ; color: #0000CC        }
+A.options:hover     { text-decoration: none ; color: #0000CC        }
+A.options:active    { text-decoration: none ; color: #0000CC        }
+
+TABLE.booking       { background: #FFFFFF ; border-color: #CCCCCC }
+TD.highlight        { background: #EEEEEE }
+TD.blank            { background: #FFFFFF }
+
+TABLE.graphical     { background: #FFFFFF }
+TD.g_booked         { background: #EEEEEE }
+TD.notaccessible    { background: #888888 }
+
+INPUT.bold          { font-weight: bold }
+
+SELECT.fill         { width: 100% }
+
+FONT.head1          { font-weight: bold ; font-size: 160% }
+FONT.head2          { font-weight: bold ; font-size: 130% }
+
+FONT.g_head         { font-size: 100% ; font-weight: bold   }
+FONT.g_head2        { font-size: 100% ; font-weight: normal }
+FONT.g_timehead     { font-size: 100% ; font-weight: bold   }
+FONT.g_timehead2    { font-size: 100% ; font-weight: normal }
+FONT.g_time         { font-size: 90%  ; color: #555588 }
+FONT.g_timeprel     { font-size: 90%  ; color: #555588 ; font-style: italic }
+
+A.g_booked:link       { text-decoration: none ; color: #0000CC ; font-size: 90% }
+A.g_booked:visited    { text-decoration: none ; color: #0000CC ; font-size: 90% }
+A.g_booked:hover      { text-decoration: none ; color: #0000CC ; font-size: 90% }
+A.g_booked:active     { text-decoration: none ; color: #0000CC ; font-size: 90% }
+
+A.g_booked_prel:link       { text-decoration: none ; color: #0000CC ; font-size: 90% ; font-style: italic }
+A.g_booked_prel:visited    { text-decoration: none ; color: #0000CC ; font-size: 90% ; font-style: italic }
+A.g_booked_prel:hover      { text-decoration: none ; color: #0000CC ; font-size: 90% ; font-style: italic }
+A.g_booked_prel:active     { text-decoration: none ; color: #0000CC ; font-size: 90% ; font-style: italic }
+
+A.g_newbooked:link       { text-decoration: none ; color: #CC0000 ; font-size: 90% }
+A.g_newbooked:visited    { text-decoration: none ; color: #CC0000 ; font-size: 90% }
+A.g_newbooked:hover      { text-decoration: none ; color: #CC0000 ; font-size: 90% }
+A.g_newbooked:active     { text-decoration: none ; color: #CC0000 ; font-size: 90% }
+
+A.g_newbooked_prel:link       { text-decoration: none ; color: #CC0000 ; font-size: 90% ; font-style: italic }
+A.g_newbooked_prel:visited    { text-decoration: none ; color: #CC0000 ; font-size: 90% ; font-style: italic }
+A.g_newbooked_prel:hover      { text-decoration: none ; color: #CC0000 ; font-size: 90% ; font-style: italic }
+A.g_newbooked_prel:active     { text-decoration: none ; color: #CC0000 ; font-size: 90% ; font-style: italic }
+
+FONT.t_head         { font-weight: bold   }
+FONT.t_timehead     { font-weight: normal }
+FONT.t_text         { font-weight: normal }
+FONT.t_timeheadnew  { font-weight: normal; color: #CC0000 }
+FONT.t_textnew      { font-weight: normal; color: #CC0000 }
+
+TABLE.active        { background: #FFFFFF ; border-color: #CCCCCC }
+TD.a_highlight      { background: #EEEEEE }
+TD.a_blank          { background: #FFFFFF }
+FONT.a_head1        { font-weight: bold ; font-size: 130% }
+FONT.a_head2        { font-weight: bold   }
+FONT.a_text         { font-weight: normal }
+
+FONT.t_timeheadprel    { font-weight: normal ; font-style: italic }
+FONT.t_prel            { font-weight: normal ; font-style: italic }
+FONT.t_timeheadprelnew { font-weight: normal ; font-style: italic ; color: #CC0000 }
+FONT.t_prelnew         { font-weight: normal ; font-style: italic ; color: #CC0000 }
+FONT.a_prel            { font-weight: normal ; font-style: italic }
+
+TABLE.cal           { background: #FFFFFF ; border-color: #000000 }
+A.cal:link          { text-decoration: none ; color: #0000CC      }
+A.cal:visited       { text-decoration: none ; color: #0000CC      }
+A.cal:hover         { text-decoration: none ; color: #0000CC      }
+A.cal:active        { text-decoration: none ; color: #0000CC      }
+
+FONT.weekday        { color: #000000 }
+FONT.saturday       { color: #00AA00 }
+FONT.sunday         { color: #CC0000 }
+FONT.otherweekday   { color: #888888 }
+FONT.othersaturday  { color: #888888 }
+FONT.othersunday    { color: #888888 }

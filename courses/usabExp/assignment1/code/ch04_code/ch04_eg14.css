@@ -1,0 +1,4 @@
+/* CSS Document */
+q:before {content:open-quote;}
+q:after  {content:close-quote;}
+q {quotes: '"' '"';}

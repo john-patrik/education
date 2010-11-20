@@ -1,0 +1,6 @@
+/* CSS Document for ch03_eg32b.html  The image used in this version had better contrast than ch03_eg32.css */
+body {
+  background-image:url(images/background2.gif);
+  background-color:#cccccc;
+  font-family:Arial, verdana, sans-serif;
+  font-weight:bold;}

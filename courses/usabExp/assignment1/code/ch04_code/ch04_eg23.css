@@ -1,0 +1,8 @@
+/* CSS Document */
+table {width:250px;}
+th {background-color:#d6d6d6;}
+td {background-color:#efefef;}
+caption {
+  caption-side: bottom;
+  text-align: right;
+  vertical-align: top;}

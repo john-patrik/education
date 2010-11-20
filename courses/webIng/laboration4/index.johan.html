@@ -1,0 +1,120 @@
+<html>
+<head>
+<style type="text/css">
+body {
+ background-color: grey;
+}
+button {
+ margin-bottom: 3px;
+}
+.weatherElement {
+ float: right;
+ padding: 5px;
+ width: 300px;
+ height: 300px;
+ border-style: solid;
+ border-width: 2px;
+ margin: -1px;
+}
+p {
+ text-align: center;
+}
+img {
+ margin-left: 50px;
+}
+</style>
+<script type="text/javascript">
+var MAIWIDGET = {};
+MAIWIDGET.weather = function () {
+	var container = document.getElementById("containerDiv");
+	var selection = document.getElementById("seasonSel").value;
+	var weatherElement = this.weatherElem(selection);
+	container.appendChild(weatherElement);
+};
+MAIWIDGET.weatherElem = function (selection) {
+	var displayMonth;
+	if (selection == "summer") {
+		displayMonth = 6;
+	} else if (selection == "winter") {
+		displayMonth = 1;
+	} else if (selection == "spring_and_fall") {
+		displayMonth = 4;
+	} else {
+		var date = new Date();
+		displayMonth = date.getMonth() + 1;
+	}
+	var weatherE = document.createElement("div");
+	weatherE.setAttribute("class", "weatherElement");
+	weatherE.appendChild(this.getTempElem(displayMonth));
+	weatherE.appendChild(this.getPicElem(displayMonth));
+	weatherE.appendChild(this.getCommentElem(displayMonth));
+	return weatherE;
+};
+// -------------------------------------------------------------
+MAIWIDGET.getTempElem = function (month) {
+	var min, max;
+	if (month >= 6 && month <= 8) {
+		min = 10;
+		max = 25;
+	} else if (month <= 2 || month == 12) {
+		min = -20;
+		max = -5;
+	} else {
+		min = -5;
+		max = 10;
+	}
+	var temp = Math.floor(Math.random()*16+min);
+	var txt = "Temperature is "+temp+" degrees C.";
+	var tempElem = document.createElement("p");
+	tempElem.setAttribute("id", "tempPg");
+	tempElem.innerHTML = txt;
+	return tempElem;
+};
+MAIWIDGET.getPicElem = function (month) {
+	var src;
+	if (month >= 6 && month <= 8) {
+		src = "pics/summer.png";
+	} else if (month <= 2 || month == 12) { 
+		src = "pics/winter.png";
+	} else { 
+		src = "pics/spring_and_fall.png";
+	}
+	var img = document.createElement("img");
+	img.setAttribute("id", "weatherImg");
+	img.setAttribute("src", src);
+	img.setAttribute("width", 200);
+	img.setAttribute("height", 200);
+	return img;
+};
+MAIWIDGET.getCommentElem = function (month) {
+	var txt = "";
+	if (month >= 6 && month <= 8) {
+		txt = "Nice weather! Perhaps going for a swim would be a good idea today? ";
+	} else if (month <= 2 || month == 12) {
+		txt = "Brr, cold. Don't forget your ear-muffs when going outside.";
+	} else {
+		txt = "Rain. Ever thought of moving to California?";
+	}
+	var comment = document.createElement("p");
+	comment.setAttribute("id", "commentPg");
+	comment.innerHTML = txt; 
+	return comment;
+};
+MAIWIDGET.clear = function () {
+	var container = document.getElementById("containerDiv");
+	container.innerHTML = "";
+};
+</script>
+</head>
+<body>
+<select name="season" id="seasonSel">
+ <option value="today">today</option>
+ <option value="winter">winter</option>
+ <option value="spring_and_fall">spring and fall</option>
+ <option value="summer">summer</option>
+</select>
+<button onClick="MAIWIDGET.weather();">display now</button>
+<button onClick="MAIWIDGET.clear();">clear all</button>
+<div id="containerDiv"></div>
+</body>
+</html>

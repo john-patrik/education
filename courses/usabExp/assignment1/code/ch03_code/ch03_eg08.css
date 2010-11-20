@@ -1,0 +1,12 @@
+/* CSS Document for ch03_eg08.html */
+p {font-family:arial; font-size:12pt;}
+
+/* lengths */
+p.px {font-size:12px;}
+p.pt {font-size:12pt;}
+p.pc {font-size:2pc;}
+p.in {font-size:0.5in;}
+p.cm {font-size:1cm;}
+p.mm {font-size:12mm;}
+p.em {font-size:1.5em;}
+p.ex {font-size:1.5ex;}

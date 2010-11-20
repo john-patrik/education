@@ -1,0 +1,4 @@
+javascript:
+byt bild med färg beroende på slumpat tal -5-25 (datum).
+ändra textinnehåll på sidan med javascript, förbered tvåspråkighet.
+addera två effekter från script.aculo.us. slider = termometer?

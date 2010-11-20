@@ -1,0 +1,125 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{color}
+\definecolor{dark}{gray}{.5}
+\usepackage{graphics}
+
+\title{Linux development environment \\
+	Laboration 2}
+\author{John-Patrik Nilsson \\
+	e-mail: jpatrik.nilsson@gmail.com \\
+	Skype: j-p.nilsson}
+
+\begin{document}
+
+\maketitle
+%\tableofcontents
+
+\pagestyle{empty}
+\thispagestyle{empty}
+
+\section{Abstract}
+This laboration presents basic command-line interface user management of a Linux/Unix based system with special reference to directories, permissions and groups.
+
+\section{Laboration}
+\subsection{Introduction}
+The assignment of the laboration could be summarized as to create three predetermined users, assign them to user groups, and to give them various privileges determined by the laboration assignment.
+
+The entire laboration was divided into small exercises. This is represented in this document as a brief description of how the problem was solved, followed by the actual shell code which was used to solve it. This code is printed on a new line with a different font and font color. Furthermore, each bash shell input is preceded by the standard prompt: \$.
+
+\subsection{Execution}
+Three directories with the given names "data", "admin" and "market", was created. 
+
+\textcolor{red}{\texttt{\$mkdir data admin market}}
+\\
+\\
+Creation of three different user accounts with no password and no ability to log in before a password has been linket to those accounts (for security reasons). The names of the new user accounts on the system is "adam", "lisa" and "peter". The system also creates home directories in the /home/ folder by default.
+
+\textcolor{red}{\texttt{\$adduser --disabled-login adam}}
+
+\textcolor{red}{\texttt{\$adduser --disabled-login lisa}}
+
+\textcolor{red}{\texttt{\$adduser --disabled-login peter}}
+\\
+\\
+Creation of three different user groups with the names "datagroup", "admingroup" and "marketgroup".
+
+\textcolor{red}{\texttt{\$addgroup datagroup}}
+
+\textcolor{red}{\texttt{\$addgroup admingroup}}
+
+\textcolor{red}{\texttt{\$addgroup marketgroup}}
+\\
+\\
+For this laboration we want the three directories "data", "admin" and "market" to be exclusively handled by the groups "datagroup", "admingroup" and "marketgroup", respectively. By this we mean that no one else but the members (users) of the respective group will have read, write, or execution permissions to the directory in question, as well as its contents. 
+
+To achieve this we first remove all permissions "others" have regarding these three directories.
+ 
+\textcolor{red}{\texttt{\$chmod o-rwx data}}
+
+\textcolor{red}{\texttt{\$chmod o-rwx admin}}
+
+\textcolor{red}{\texttt{\$chmod o-rwx market}}
+\\
+\\
+The different user groups were then given group ownership over their respective directory.
+
+\textcolor{red}{\texttt{\$chgrp datagroup data}}
+
+\textcolor{red}{\texttt{\$chgrp admingroup admin}}
+
+\textcolor{red}{\texttt{\$chgrp marketgroup market}}
+\\
+\\
+The above commands only changed the group ownership, but for the members of the different groups to actually be able to write to the respective directory the groups had to be given write permission, like so.
+
+\textcolor{red}{\texttt{\$chmod g+w data}}
+
+\textcolor{red}{\texttt{\$chmod g+w admin}}
+
+\textcolor{red}{\texttt{\$chmod g+w market}}
+\\
+\\
+Three different users were at this time present on the system, as well as three different user groups, and three different directories with the right permission setup. The different users were then granted the right directory permissions by adding them to the right user group.
+
+\textcolor{red}{\texttt{\$adduser adam datagroup}}
+
+\textcolor{red}{\texttt{\$adduser peter datagroup}}
+
+\textcolor{red}{\texttt{\$adduser adam admingroup}}
+
+\textcolor{red}{\texttt{\$adduser lisa admingroup}}
+
+\textcolor{red}{\texttt{\$adduser lisa marketgroup}}
+
+\appendix
+\section{File: /etc/group}
+\begin{verbatim}
+adam:x:1001:
+lisa:x:1002:
+peter:x:1003:
+datagroup:x:1004:adam,peter
+admingroup:x:1005:adam,lisa
+marketgroup:x:1006:lisa
+\end{verbatim}
+
+\section{File: /etc/passwd}
+\begin{verbatim}
+adam:x:1001:1001:,,,:/home/adam:/bin/bash
+lisa:x:1002:1002:,,,:/home/lisa:/bin/bash
+peter:x:1003:1003:,,,:/home/peter:/bin/bash
+\end{verbatim}
+
+\section{\$ls -l}
+\begin{verbatim}
+drwxrwx--- 2 root   admingroup  4096 2010-02-08 13:55 admin
+drwxrwx--- 2 root   datagroup   4096 2010-02-08 13:55 data
+drwxrwx--- 2 root   marketgroup 4096 2010-02-08 13:55 market
+\end{verbatim}
+
+\section{References}
+The adduser man page.
+
+\end{document}

@@ -1,0 +1,124 @@
+TODO
+	optimize makefile with the help of website.
+		optimize = make it smaller and smarter.
+	outline report.
+		like put down some basic things I find worthy to learn,
+		then do the \sections.
+-----------------------------------------------------------------------------------------
+abstract - what is make/makefile.
+fundamental rule is that the targets in the makefile should only depend on
+THEIR own depends.
+most useful gcc command-line options
+	see list
+the makefile
+	basic layout
+	common variables
+	vpath and where to look for files
+	my makefile
+	explanation
+	setting PATH variable and make un/install
+
+-----------------------------------------------------------------------------------------
+GCC
+What does following arguments to gcc do?
+(Use the like this: gcc codefile.c <argument> eg: gcc myfirstcode.c -o myfirstprogram)
+
+-o filename
+-E
+-S
+-c
+-v
+-ansi
+-pedantic
+-Dmacro
+-Ldir
+-Idir
+-Wall
+-g
+-pg
+-O
+-O2
+
+Makefile
+With the given files in this archive, write a Makefile which consists of rules "all" to make an executable file "program1" and appropriate commands to execute the rules "clean", "install" and "uninstall". This archive is decompressed by
+% tar -zxvf srcmake.tar.gz
+Use your own defined and automatic variables e.g. $(FOO), @ and %.
+
+Hand in a tar.gz-archive containing a file describing gcc arguments and the makefile.
+----------------------------------------------------------------------------------------
+untar source
+executable file program1
+commands to execute rules: all, clean, install, uninstall.
+----------------------------------------------------------------------------------------
+makfile variables:
+$@ = The filename representing the target.
+$% = The filename element of an archive member specification.
+$< = The filename of the first prerequisite.
+$? = The names of all prerequisites that are newer than the target, separated by spaces.
+$^ = The filenames of all the prerequisites, separated by spaces, containing no duplicates.
+----------------------------------------------------------------------------------------
+examples:
+VPATH = src
+vpath %.c src 		(tells makefile to look for *.c files in the src directory)
+vpath %.h include 	(tells makefile to look for *.h files in the include directory)
+----------------------------------------------------------------------------------------
+GCC compilation sequence is by default:
+	preprocessing:
+		input: file.c
+		output: file.i
+	compilation proper:
+		input: file.i
+		output: file.s
+	assembly: 
+		input: file.s
+		output: file.o (file.a)
+	linking:
+		input: file.o ...
+		output: a.out (or user-determined)
+Default file types:
+	.c (source code which should be preprocessed)
+	.i (source code which should not be preprocessed)
+	.h (header file to be turned into a precompiled header)
+	.s (assembly file)
+	.o (machine code executable file)
+	.a (machine code library file)
+
+-o file : places the input in file "file". Doesn't matter what the output is. If option is not used the default output file for the object file "source.suffix" will be as follows: 
+	* executable file named "a.out". 
+	* object file named "source.o".
+	* assembler file named "source.s".
+	* precompiled header file named "source.suffix.ghc".
+
+-E : Stop after preprocessing stage, if output file is omitted output is sent to standard output. If input file doesn't require preprocessing the file will be ignored.
+
+-E : Perform only the preprocessing stage.
+
+-S : Stop after compilation proper, before assembling.
+
+-c : Compile and assemble source files and exit before the linking stage. 
+
+-v : Be verbose, print commands executed to run the compilation stages, also writes the version numbers of the compiler and processor programs. Output is sent to standard error.
+
+-ansi : Used to control the dialect of C that the compiler accepts. This option turns off certain options of the compiler that are incompatible with the ISO C90 or C++ standards when compiling C or C++ respectively. It causes the programs with the incompatible code to exit ungratuitously. This option is used in conjunction with the -pedantic option to cause programs with non-standard dialect to exit gratiutously.
+
+-pedantic : Issue warnings demanded by the strict ISO standards for C and C++, and rejects those programs in addition to programs that use forbidden extensions.
+
+-D "name" : This is a preprocessor option, and should be used together with -E since it's output may be usuitable for actual compilation. -D "name" without an argument predefines "name" as a macro with definition 1. Suggested use is -D "name"="definition", where contents of definition are tokenized and processed as if they appeared during translation phase three in a #define directive. (Is this the same as defining something in a #define directive in a source file?)
+If using a shell, make sure to protect characters that have special meaning in the shell's syntax by using the shell's quoting syntax.
+
+-L "dir" : Add the directory "dir" to the list of directories to be searched for libraries.
+
+-I "dir" : Add the directory "dir" to the list of directories to be searched for header files. Directories named by -I are searched before the standard system include directories. If the directory added by this option is a standard system include directory this option is ignored. Thusly, this option can be used to override system header files, by substituting it with another one. However, do not use this option to add directories that contain vendor-supplied header files, use -isystem for that.
+
+-Wall : This option enables all optional warnings which are desirable for normal code.
+
+-g : Produces debugging information in the operating systems native format.
+
+-pg : Generate extra code to write profile information suitable for the analysis program gprof.
+
+-O : These options control compiler optimizations. Enabling optimization means that the compiler will try to improve the performance and/or the size of the program at the (possible) cost of compilation time and/or the ability to debug the program. When optimizing with these options the compiler enables "unit-at-a-time" functionaltity, which means that the compiler keeps information it has gained while compiling earlier functions of that program when trying to optimize the current function. This causes the compilation to consume more memory and take longer time to complete. 
+If using multiple -O options, the last such option is the only effective one.
+	* -O0 : Default. No optimization. Fastest compilation time and makes debugging produce the expected results.
+	* -O1 : Compiler tries to reduce code size and execution time of the program, but (possibly) causes the compilation to consume more memory and/or take longer time.
+	* -O2 : Adds nearly all supported GCC optimizations (including -O1) that do not involve gaining speed at the cost of space. In comparison to the -O1 options it increases both performance and the compilation time of the generated code. These optimizations does not include "loop unrolling"\footnote{Unroll loops whose number of iterations can be determined at compile time or upon entry to the loop. This option makes code larger and may or may not make it run faster.} or "function inlining"\footnote{Integrates all simple functions into their callers. Decreases overall size of the generated code.}. (In Gentoo, -D_FORTIFY_SOURCE=2 is set by default, and is activated when -O is set to 2 or higher. This enables additional compile-time and run-time checks for several libc functions.)\footnote{GCC man page.}
+	* -Os : Optimize for size. Enables all -O2 optimizations that is not known to increase code size, as well as additional optimizations designed to decrease code size.

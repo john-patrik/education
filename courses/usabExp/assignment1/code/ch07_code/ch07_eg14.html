@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Form Example</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<style type="text/css">
+  body {font-family:arial, verdana, sans-serif;}
+  td {width:130px;}
+</style>
+</head>
+
+<body>
+
+<form action="surveyResults.asp" method="post" name="frmSurvey">
+  <table>
+    <tr>
+      <td><label for="q37">Strongly agree</label></td>
+      <td><label for="q36"><img src="1px.gif" alt="agree" /></label></td>
+      <td><label for="q35"><img src="1px.gif" alt="slightly agree" /></label></td>
+      <td><label for="q34">Neutral</label></td>
+      <td><label for="q33"><img src="1px.gif" alt="slightly disagree" /></label></td>
+      <td><label for="q32"><img src="1px.gif" alt="disagree" /></label></td>
+      <td><label for="q31">Strongly disagree</label></td>
+    </tr>
+    <tr>
+      <td><input type="radio" name="radQ3" value="7" id="q35" /></td>
+      <td><input type="radio" name="radQ3" value="6" id="q35" /></td>
+      <td><input type="radio" name="radQ3" value="5" id="q35" /></td>
+      <td><input type="radio" name="radQ3" value="4" id="q34" /></td>
+      <td><input type="radio" name="radQ3" value="3" id="q33" /></td>
+      <td><input type="radio" name="radQ3" value="2" id="q32" /></td>
+      <td><input type="radio" name="radQ3" value="1" id="q31" /></td>
+    </tr>
+  </table>
+  <input type="submit" />
+</form>
+
+</body>
+</html>

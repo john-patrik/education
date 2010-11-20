@@ -1,0 +1,87 @@
+div#head {
+	color: white;
+	padding-left: 15px;
+	padding-right: 15px;
+	border:1px solid #32cb01;
+	margin-bottom: -1px;
+	background-image:
+	url('pics/head-1.jpg');
+}
+div#foot {
+	color: white;
+	margin-top: -1px;
+	padding-left: 15px;
+	padding-right: 15px;
+	border:1px solid #32cb01;
+	background-image:
+	url('pics/foot-1.jpg');
+}
+div#content {
+	padding-right: 15px;
+	padding-left: 15px;
+	border:1px solid #32cb01;
+}
+body {
+	color: white;
+	background-color: black;
+	font-family: verdana;
+	font-size: 80%;
+}
+a:link, a:visited {
+ text-decoration:none;
+ padding:2px;
+ color:#6f88e5;
+ background-color:#000000;
+}
+a:hover, a:active {
+ color: #555555;
+}
+/* ############################################## */
+/*
+#nav a:link, a:visited {
+	display:block;
+	width:100px;
+	font-weight:bold;
+	color:#ffffff;
+	background-color:#444444;
+	text-align:center;
+	padding:4px;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+*/
+
+/* For all UL (unordered lists) in the nav div-element: */
+#nav ul {
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+/* ALL the list ITEMS in the entire div. */
+#nav li {
+	/* Make them display without line breaks (in a line). */
+/*	display: inline; */
+
+	float: left;
+}
+
+/* The drop-down lists in the menu. */
+#nav li ul {
+	/* Don't display these until we hover over the items. */
+	display:none; 
+	/* We must have this so that the other elements does NOT get moved (FUBAR) when we display the menu items. */
+	position:absolute;
+}
+
+/* The second-generation individual list items, ie. the "links" of the menu. */
+#nav li ul li {
+	/* We don't want these to be displayed in a line (inline), so we "reset" them. */
+/*	display: block; */
+
+	clear: both;
+}
+
+#nav li:hover ul {
+ display: block;
+}

@@ -1,0 +1,8 @@
+/* CSS Document */
+
+ol { counter-reset: item }
+li {display:block;}
+li:before {
+  counter-increment: item ;
+  content: counters(item, ".") " "; 
+}

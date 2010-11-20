@@ -1,0 +1,118 @@
+## VIM ##
+quit=:q
+quit-save=:q!
+quit+save=:x
+find <string>=/<string>
+search+replace=:s/<string>/<replacement>/
+search+replace all instnaces=:%s/<string>/<replacement>/gc
+move to beg/end of file={/}
+move to beg/end of line=0/$
+move left/right by character=<-/->,h/l
+move left/right by word=w/e
+move up/down=up/down,k/j
+delete characters=x
+delete words=dw
+delete lines=dd
+add indent=<ctrl>+t
+del indent=<ctrl>+d
+set indent=:set tabstop=4
+
+## VIM ##
+# eol = end of line.
+# bol = beginning of line.
+# - - - - - - - - - - - -
+# Movement.
+down/up, page 		= <ctrl>-F/<ctrl>-B
+left/right, char 	= h/l
+left/right, word 	= w/b
+beg/end, line 		= 0/$
+down/up 		= j/k
+jump to next <regexp> 	= /<regexp>
+ 	to jump again 	= n
+ 	backwards 	= N
+# - - - - - - - - - - - -
+# Enter edit mode and? At where?
+append, cursor		= a
+append, line 		= A
+insert, cursor		= i
+insert, line 		= I
+append, new line 	= o
+insert, new line 	= O
+# - - - - - - - - - - - -
+# Changing options.
+# Basically c-<movementkey> to replace entry and enter edit mode.
+replace line 		= cc
+replace eol 		= c$
+replace bol 		= c0
+replace next word 	= cw
+replace prev word 	= cb
+# - - - - - - - - - - - -
+join next line at eol 	= J
+# - - - - - - - - - - - -
+# Visual mode. Enter with v.
+copy (yank) 		= y
+cut 			= d
+paste, append 		= p
+paste, insert 		= P
+# - - - - - - - - - - - -
+new line 		= 
+insert text 		=
+copy, word 		=
+copy, line 		=
+cut, word 		=
+cut, line 		=
+paste 			= 
+# delete is basically d-<movementkey>
+delete current line 	= dd
+delete, next, char	= x, dl
+delete, next, word	= dw
+delete, rest, line	= d0
+delete, prev, char	= dh
+delete, prev, word	= db
+delete, before, line	= d$
+# - - - - - - - - - - - - 
+# Code.
+add indent 		= <ctrl>-t
+del indent 		= <ctrl>-d
+# - - - - - - - - - - - - 
+open file in spltwin 	= :sp <filename>
+change window 		= <ctrl>-w <ctrl>-w
+save 			= :w
+undo 			= u
+quit, save 		= :q
+quit, no save 		= :q!
+# - - - - - - - - - - - - 
+
+## Emacs ##
+quit=:q
+quit-save=C-x C-c
+quit+save=C-x s
+find <string>=C-s
+create window=C-x 2
+move cursor to other frame=C-x o
+search+replace all instances=A-x repl s
+move to up/down of screen=A-v/C-v
+center screen=C-l
+stop stuff=C-g
+del=C-d
+kill prev word=A-backspace
+kill next word=A-d
+kill from cursor to eol=C-k
+mark=C-space
+kill marked=C-w
+yank (paste)=C-y
+yank earlier=A-y
+list buffers=C-x C-b
+hop to buffer=C-x b <name>
+save buffers=C-x s
+undo=C-x u
+move to beg/end of file=A-</A->
+move to beg/end of sentence=A-a/A-e
+move to beg/end of line=C-a/C-e
+move left/right by character=C-b/C-f
+move left/right by word=A-b/A-f
+move up/down=C-p/C-n
+delete characters=backspace
+compile=A-x compile
+recompile=A-x recompile
+stop compile=A-x kill-compilation

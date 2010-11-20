@@ -1,0 +1,24 @@
+/* CSS Document */
+
+body {
+  background-color:#efefef;
+  font-family:arial, verdana, sans-serif;}
+
+div {
+  width:800px;
+  border:1px solid #000000;
+  margin:1px;
+  padding:5px;}
+
+div#masthead {
+  height:100px;
+  background-color:#d6d6d6;}
+
+div#navigation {
+  height:40px;
+  background-color:#666666; 
+  color:#ffffff;}
+
+div#body {
+  height:100%;
+  background-color:#ffffff;}

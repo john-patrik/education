@@ -1,0 +1,5 @@
+/* CSS Document for ch03_eg14.html */
+p.underline {text-decoration:underline;}
+p.overline {text-decoration:overline;}
+p.line-through {text-decoration:line-through;}
+p.blink {text-decoration:blink;}

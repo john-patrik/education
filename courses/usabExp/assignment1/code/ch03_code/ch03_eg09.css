@@ -1,0 +1,7 @@
+/* CSS Document for ch03_eg09.html */
+p {font-family:arial; font-size:12pt;}
+
+/* percentages */
+p.fifty {font-size:50%;}
+p.hundred {font-size:100%;}
+p.hundredandfifty {font-size:150%;}

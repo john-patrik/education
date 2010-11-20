@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1 plus MathML 2.0 plus SVG 1.1 //EN"
+          "http://www.w3.org/2002/04/xhtml-math-svg/xhtml-math-svg.dtd ">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+  <head>
+    <title>XHTML plus MathML plus SVG</title>
+  </head>
+  <body>
+    <h1>A Hybrid Document</h1>
+    <p>This document contains markup from three separate namespaces that have been
+       combined to create a hybrid document type. The host namespace is XHTML.</p> 
+    <p>MathML is used to add equations to the page.</p>
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+      <mroot>
+        <mrow>
+          <mi>x</mi>
+          <mo>+</mo>
+          <mn>1</mn>
+        </mrow>
+        <mn>3</mn>
+      </mroot>
+    </math>
+    <p>SVG is used to add graphics to the page.</p>
+    <svg xmlns="http://www.w3.org/2000/svg" width="5cm" height="2.5cm">
+    <rect width="150px" height="100px" rx="15" ry="15" 
+          style="fill:#ff0000; stroke:#000000" />
+    <circle cx="35" cy="35" r="30" style="fill:#00ff00; stroke:#000000;" />
+    </svg>
+    <p>You can look at the source of the page to see the markup from the three
+       different namespaces.</p>
+  </body>
+</html>

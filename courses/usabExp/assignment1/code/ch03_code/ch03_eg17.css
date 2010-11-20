@@ -1,0 +1,8 @@
+/* CSS Document for ch03_eg17.html */
+td {
+  width:200px;
+  font:12pt arial;}
+
+td.number {font-size: 12pt; line-height:1.5;}
+td.length {font-size: 12pt; line-height:1.5em;}
+td.percentage {font-size: 12pt; line-height:75%;}

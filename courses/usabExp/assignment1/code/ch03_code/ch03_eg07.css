@@ -1,0 +1,6 @@
+/* CSS Document for ch03_eg07.html */
+p {font-family:arial; font-size:12pt;}
+
+/* relative sizes */
+p.smaller{font-size:smaller;}
+p.larger {font-size:larger;}

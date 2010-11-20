@@ -1,0 +1,11 @@
+Hejsan Per,
+
+Jag är glad att du ställer den frågan för jag blev ytterst konfunderad när jag såg att kursernas Moodle-sidor var iögonfallande lika. Innan jag anmälde mig till be båda kurserna undersökte och jämförde jag beskrivningarna på deras respektive hemsida(se längst ner i mailet), och kom fram till att skillnaden mellan dem var tillräckligt stor för att jag med gott samvete skulle kunna slutföra anmälningarna. Då jag absolut inte kan förneka det faktum att jag förväntade mig att kursernas innehåll till viss del skulle delas, trodde jag helt sanningsenligt inte att de skulle var så pass lika (utbildningsnivån i kursbeskrivningarna på hemsidorna är olika). Jag tycker att detta borde ha framgått av antingen kursbeskrivningarna på hemsidan eller av högskoleverkets egna kursbeskrivningar på studera.nu.
+
+Om jag förstår ditt förslag rätt så tycker du att jag gör alla laborationer som tillhör kursen webbteknik för ingenjörer, samt att jag gör två extra projekt i samma kurs, varav ett handlar om Drupal, och på så sätt klarar av båda kurserna? Det tycker jag låter som en bra idé. Jag slog upp Drupal snabbt och läste om det på Wikipedia och det låter väldigt intressant, jag utvärderar det gärna.
+
+Med vänliga hälsningar,
+J-P
+
+Webbutveckling - (http://www.utbildningar.umu.se/pluto/portal/SelmaPortlet/_rp_SelmaPortlet_row1_col1_p1_search/1_2009p1/_rp_SelmaPortlet_row1_col1_p1_package/1_Kurs/_rp_SelmaPortlet_row1_col1_p1_topic/1_searchSimple/_rp_SelmaPortlet_row1_col1_p1_course/1_5EL107/_pid/SelmaPortlet_row1_col1_p1/_rp_SelmaPortlet_row1_col1_p1_action/1_course)
+Webbteknik för ingenjörer - (http://www.utbildningar.umu.se/pluto/portal/SelmaPortlet/_rp_SelmaPortlet_row1_col1_p1_search/1_2009p1/_rp_SelmaPortlet_row1_col1_p1_package/1_Kurs/_rp_SelmaPortlet_row1_col1_p1_topic/1_searchSimple/_rp_SelmaPortlet_row1_col1_p1_course/1_5EL106/_pid/SelmaPortlet_row1_col1_p1/_rp_SelmaPortlet_row1_col1_p1_action/1_course)

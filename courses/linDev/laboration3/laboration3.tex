@@ -1,0 +1,281 @@
+\documentclass[a4paper,10pt]{article}
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+%\usepackage[swedish]{babel}
+\usepackage{color}
+\usepackage{graphics}
+
+\title{Linux development environment \\
+	Laboration 3}
+\author{John-Patrik Nilsson \\
+	e-mail: jpatrik.nilsson@gmail.com \\
+	Skype: j-p.nilsson}
+
+\begin{document}
+
+\maketitle
+%\tableofcontents
+
+\pagestyle{empty}
+\thispagestyle{empty}
+
+\section{Abstract}
+Almost all Unix-based systems use a command-line interface called a shell to provide the most basic interaction with the operating system and the applications. By using text-only as both input and output, this shell might seem as a legacy from the old non-graphical terminals and applications, but the fact is that it is widely used even today when shiny desktop effects seem to be the common norm. The likely reason for this is that it is still the best, and most powerful, tool for some tasks.
+
+Most Linux distributions use BASH (Bourne Again Shell) as the standard shell.
+
+\textbf{Keywords:} Shell, Linux, Unix, commands, bash.
+
+\section{Laboration 3}
+\subsection{Introduction}
+During this laboration the basic usage of the bash shell for administrative purposes was covered.
+
+\subsection{Basic commands}
+All the following inputs are in fact small applications (programs).
+\\
+\\
+Name: cp
+\\
+Example usage: \verb!cp <source> <destination>!
+\\
+Description: Copies a given source to a given destination. If the destination already exists and it isn't a directory, the destination gets overwritten.
+\\
+Example usage: \verb!cp -R <source> <destination>!
+\\
+Description: Copies the source recursively to the destination, i.e. if the source is a folder all the contents of that folder also gets copied.
+\\
+\\
+Name: mkdir
+\\
+Example usage: \verb!mkdir <directory>!
+\\
+Description: Create a directory with the name \verb!<directory>!.
+\\
+Example usage: \verb!mkdir -p <parent_directory>/<directory>!
+\\
+Description: Creates the required folder hierarchy if needed.
+\\
+\\
+Name: rmdir
+\\
+Example usage: \verb!rmdir <directory>!
+\\
+Description: Deletes (removes) the directory with the name \verb!<directory>! if it the directory is empty, otherwise it exits with an error.
+\\
+\\
+Name: rm
+\\
+Example usage: \verb!rm <file>!
+\\
+Description: Deletes (removes) the file with the name \verb!<file>!.
+\\
+Example usage: \verb!rm -r <directory>!
+\\
+Description: Deletes (removes) \verb!<directory>! and all its contents.
+\\
+\\ 
+Name: find
+\\
+Example usage: \verb!find <path> -name <expression> -type f -print!
+\\
+Description: Print the names of all files with names matching \verb!<expression>! in the directory hierarchy rooted at \verb!<path>! to stdout, with a trailing newline at the end of each filename.
+\\
+\\
+Name: cd
+\\
+Example usage: \verb!cd <diretory_path>!
+\\
+Description: Change the current directory to the given \verb!<directory_path>!.
+\\
+\\
+Name: pwd
+\\
+Example usage: \verb!pwd!
+\\
+Description: Print the current directory to stdout.
+\\
+\\
+Name: df
+\\
+Example usage: \verb!df -h!
+\\
+Description: Prints the file system usage with user-friendly size formats.
+\\
+\\
+Name: ps
+\\
+Example usage: \verb!ps -AH!
+\\
+Description: Displays information about running processes on the system with the same user id as the invoker of the command has. The AH options enables a hierarchy view of all processes on the system.
+\\
+\\
+Name: du
+\\
+Description: Estimate disk usage of each file in each directory. If no argument is used the root path is the current directory.
+\\
+Example usage: \verb!du -ch <path> | grep total!
+\\
+Example description: Pipes the total of disk space used by \verb!<path>! to grep whereby filtering out every output except the total. Handy to check how much disk space a folder consumes.
+\\
+\\
+Name: adduser 
+\\
+Description: Add a user to the system.
+\\
+Example usage: \verb!adduser --disabled-login <name>!
+\\
+Example description: Add a user \verb!<name>! to the system with login disabled until the account gets issued a password.
+\\
+\\
+Name: deluser 
+\\
+Description: Removes (deletes) a user from the system.
+\\
+Example usage: \verb!deluser --remove-all-files <name>!
+\\
+Example description: Removes (deletes) the user \verb!<name>! from the system, and also removes all files with the same ownership as the user. Handy for clearing the system from random users added during laborations. ;)
+\\
+\\
+Name: whoami 
+\\
+Description: Prints the effective user id.
+\\
+Example usage: \verb!whoami!
+\\
+\\
+Name: whereis 
+\\
+Description: Used to locate binary, source and manual page file for a command.
+\\
+Example usage: \verb!whereis -b <command>!
+\\
+Example description: Locate the binary \verb!<command>! file.
+\\
+\\
+Name: cat
+\\
+Description: Concatenate files and print their contents to the standard output. Also usable to read the contents of a file.
+\\
+Example usage: \verb!cat /proc/cpuinfo | grep "model name"!
+\\
+Example description: How big is yours?
+\\
+\textit{Notes: Do not confuse with "lolcat".} \footnote{A widespread phenomenon across the Intertubes (\textit{icanhascheezburger.com}) where questionable pictures of cats (and things that might be seen as cats, but really aren't) gets labeled with "lolspeak"; a form of writing where one tries to break as many grammatical rules as possible. --- \textit{By this point the effective caffeine level of the authors biological system had far exceeded the recommended levels and thus the proffessionalism of its standard output should be object to critizism.}}
+\\
+\\
+Name: more
+\\
+\textit{Notes: Roger more. Alsa (also), apparently less is more. "More" translated to lolspeak is "moar".}
+\\
+Description: Text pager, one screen at a time.
+\\
+Example usage: \verb!more <file>!
+\\
+Example description: If you need this you are probably reading the wrong report.
+\\
+\\
+Name: less
+\\
+Description: It's like more, but better.
+\\
+Example usage: \verb!less <file>!
+\\
+\\
+Name: tail
+\\
+\textit{Notes: Cats have tails.}
+\\
+Description: Print the last part of the file(s) to standard output.
+\\
+Example usage: \verb!tail -f <file>!
+\\
+Example description: Prints the last part of the file to standard output each time the file is updated (written to). Useful for keeping an eye on log files in real-time.
+\\
+\\
+Name: echo
+\\
+Description: Print a string to stdout.
+\\
+Example usage: \verb!echo "meow"!
+\\
+Example description: Prints meow plus a newline.
+\\
+\\
+Name: which
+\\
+Description: Prints the path to the binaries which could be executed in the current shell session.
+\\
+Notes: Similar to \verb!whereis -b!, but there is at least one big difference; \verb!which! searches in the places defined in the shell sessions PATH variable, whereas \verb!whereis -b! searches in the "standard Linux places", whatever that means. (See man whereis.)
+\\
+Example usage: \verb!which <command>!
+\\
+\\
+Name: wget
+\\
+Description: A non-interactive network downloader. Wget does not need user presence or even a logged on user to complete the download once started. It support the HTTP, HTTPS and FTP protocols.
+\\
+Example usage: \verb!wget --no-clobber --input-file <file>!\\ 
+\verb!--bind-address=<address> --server-response --limit-rate=<mbit/sec>m !\\
+\verb!--random-wait --quota=<quota>m --ignore-length --user-agent=""!
+\\
+Example description: Download the URLs listed in \verb!<file>!, skipping URLs with the same name as files already present in the folder, limiting transfer rate to \verb!<mbit/sec>!, printing server responses to stdout, and also binding the transfers to one of your active \verb!<addresses>!. The options here also enables wgets ability to wait a random amount of time between each retrieval, to work around evil services that would otherwise reject such programs as wget. The quota options tells wget to stop downloading when the \verb!<quota>! (in megabytes) has been met. Also, these options also ignores HTTP headers with fake lengths.
+\\
+\\
+Name: grep
+\\
+Description: Prints lines from stdin or \verb!<file>! to stdout matching a pattern.
+\\
+Example usage: \verb!cat laborationreport.txt | grep -i spellingerror!
+\\
+Example descrption: Scan laborationreport.txt and print all lines containing instances of spellingerror (ignoring case) to stdout.
+\\
+\\
+Name: sort
+\\
+Description: Sorts lines of collected input and prints it to stdout.
+\\
+Example usage: \verb!cat <list> | sort -r!
+\\
+Example description: Read lines from \verb!<list>! and sort them in reverse alphabetical order via pipe, then print them to stdout with cat.
+\\
+\\
+Name: wc
+\\
+Description: Count the number of words, newlines and/or byte counts in a file or from standard input.
+\\
+Example usage: \verb!wc -w laboration3.tex!
+\\
+Example description: Prints the number of words in this document (the latex source, not the PDF).
+\\
+\\
+\subsection{Pipes and redirection}
+\verb!ls / > lsoutput.txt!
+\\
+Sent the results of \verb!ls /! via a pipe to lsoutput.txt. No output to standard out, because the command did not contain any errors.
+\\
+\\
+\verb!ls /hh > lsoutput2.txt!
+\\
+The command exited with an error printed to standard error because the file/directory hh did not exist. However, the lsoutput2.txt file was created, but did not contain any information.
+\\
+\\
+\verb!ls / 2> lserror.txt!
+\\
+Sent standard error from command \verb!ls /! to lserror.txt, but since the command exited without error lserror.txt was empty.
+\\
+\\
+\verb!ls /hh 2> lserror2.txt!
+\\
+Sent standard error from command \verb!ls /hh! to lserror2.txt, and since the command exited with an error (there was no such file/directory) the message was printed to lserror2.txt.
+\\
+\\
+Standard input (stdin), output (stdout), and error (stderr) is used to provide a command-line interface between an application and another part, whether it is a user or another application. Stdin is the information (input) given to the application, which then responds with output via the same channel (the command-line interface). The output can be classified as either a success (stdout) or a failure (stderr). All this information can be manipulated by the standard shell tools such as pipe (\verb!|!) and redirection (\verb!>, >>, 2>, 2>&1!).
+
+\appendix
+\section{References}
+All the man pages for the commands discussed in this document.
+\\
+\\
+icanhascheezburger.com.
+
+\end{document}

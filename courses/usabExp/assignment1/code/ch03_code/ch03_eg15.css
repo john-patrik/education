@@ -1,0 +1,7 @@
+/* CSS Document for ch03_eg15.html */
+p {font:12pt arial;}
+
+p.none {text-transform:none;}
+p.capitalize {text-transform:capitalize;}
+p.uppercase {text-transform:uppercase;}
+p.lowercase {text-transform:lowercase;}

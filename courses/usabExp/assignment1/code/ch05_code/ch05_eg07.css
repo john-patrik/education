@@ -1,0 +1,15 @@
+/* CSS Document */
+
+div {
+  font-family:arial, verdana, sans-serif;
+  border:1px solid #000000;
+  padding:3px;
+  margin:5px;
+  width:300px;}
+
+img {
+  float:right;
+  margin:5px;
+  width:175px;}
+
+p {clear:right;}

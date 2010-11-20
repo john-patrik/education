@@ -1,0 +1,6 @@
+/* CSS Document */
+
+div, h1, p {
+  font-family:arial, verdana, sans-serif;
+  border:1px solid #000000;
+  margin:5px;}

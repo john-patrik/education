@@ -1,0 +1,5 @@
+/* CSS Document */
+table {
+  border-collapse: separate;
+  border-spacing: 20px;}
+td {border:1px solid black;}

@@ -1,0 +1,5 @@
+/* CSS Document */
+
+td {border-style:solid; border-width:1px; width:30px;}
+table.show { empty-cells:show;}
+table.hide { empty-cells:hide;}

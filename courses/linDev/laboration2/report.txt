@@ -1,0 +1,77 @@
+Create three directories, data, admin and market
+Create three users adam, peter, lisa
+Create three groups datagroup, admingroup and marketgroup
+Set up a system where adam and peter gets read/write access to data, adam and lisa gets read/write access to admin and peter and lisa gets read/write access to market. Everybody else should have no rights to these directories.
+
+Useful commands are adduser, deluser, chmod, chown, chgrp, gpasswd
+
+Hand in a written report on how you solved this task, and the appropriate copies from /etc/group, /etc/passwd and outputs from ls -l <your directory where you created the above directories>
+
+##########################################################################################
+
+1. Laboration 2
+
+This laboration presents basic command-line interface user management of a Linux/Unix based system.
+
+Creation of three different directories with the names "data", "admin" and "market".
+code: mkdir data admin market
+
+Creation of three different user accounts with no password and no ability to log in before a password has been linket to those accounts (for security reasons). The names of the new user accounts on the system is "adam", "lisa" and "peter". The system also creates home directories in the /home/ folder by default.
+code:
+adduser --disabled-login adam
+adduser --disabled-login lisa
+adduser --disabled-login peter
+
+Creation of three different user groups with the names "datagroup", "admingroup" and "marketgroup".
+addgroup datagroup
+addgroup admingroup
+addgroup marketgroup
+
+For this laboration we want the three directories "data", "admin" and "market" to be exclusively handled by the groups "datagroup", "admingroup" and "marketgroup", respectively. By this we mean that no one else but the members (users) of the respective group will have read, write, or execution permissions to the directory in question, as well as its contents. 
+
+To achieve this we first remove all permissions "others" have regarding these three directories.
+code: 
+chmod o-rwx data
+chmod o-rwx admin
+chmod o-rwx market
+
+The different user groups were then given group ownership over their respective directory.
+code:
+chgrp datagroup data
+chgrp admingroup admin
+chgrp marketgroup market
+
+The above commands only changed the group ownership, but for the members of the different groups to actually be able to write to the respective directory the groups had to be given write permission, like so.
+code:
+chmod g+w data
+chmod g+w admin
+chmod g+w market
+
+Three different users were at this time present on the system, as well as three different user groups, and three different directories with the right permission setup. The different users were then granted the right directory permissions by adding them to the right user group.
+code:
+	adduser adam datagroup
+	adduser peter datagroup
+	adduser adam admingroup
+	adduser lisa admingroup
+	adduser lisa marketgroup
+-----------------------------------
+/etc/group:
+adam:x:1001:
+lisa:x:1002:
+peter:x:1003:
+datagroup:x:1004:adam,peter
+admingroup:x:1005:adam,lisa
+marketgroup:x:1006:lisa
+-----------------------------------
+/etc/passwd:
+adam:x:1001:1001:,,,:/home/adam:/bin/bash
+lisa:x:1002:1002:,,,:/home/lisa:/bin/bash
+peter:x:1003:1003:,,,:/home/peter:/bin/bash
+-----------------------------------
+ls -l:
+drwxrwx--- 2 root   admingroup  4096 2010-02-08 13:55 admin
+drwxrwx--- 2 root   datagroup   4096 2010-02-08 13:55 data
+-rw-r--r-- 1 root   root           0 2010-02-08 16:05 ls.txt
+drwxrwx--- 2 root   marketgroup 4096 2010-02-08 13:55 market
+-rw-r--r-- 1 spykes spykes      1442 2010-02-08 16:04 report.txt
+-----------------------------------

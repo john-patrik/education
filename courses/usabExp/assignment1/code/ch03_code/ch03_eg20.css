@@ -1,0 +1,9 @@
+/* CSS Document for ch03_eg20.html */
+p {
+  font-family:arial;
+  font-size:12px;
+  width:300px;}
+
+p:first-letter{
+  font-size:32px;
+  font-weight:bold;}
