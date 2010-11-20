@@ -11,3 +11,5 @@
 *.log
 *.toc
 *.doc
+git_config
+sysvet/tmp
